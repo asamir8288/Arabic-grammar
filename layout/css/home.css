@@ -1,0 +1,34 @@
+input[type="text"],input[type="password"]{
+    font-family:'HacenSaudiArabia', Tahoma, Arial;
+    height: 20px;
+    font-size: 13px;
+    border: 1px solid #e4e4e4;
+    padding: 4px 13px 4px 13px;
+    float: right;
+    clear: left;
+    width: 180px;
+    background-color: #f9f9f9;
+    position: relative;
+    margin-right: 5px;
+    color: #8E8E8E;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.07);
+
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: inset 0 1px 14px rgba(0, 0, 0, 0.07);
+
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+
+input[type="text"]:focus, input[type="password"]:focus{
+    border-color: #D6D6D6;
+    outline: 0;
+    background: #FDFDFD;
+}

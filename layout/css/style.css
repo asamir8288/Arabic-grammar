@@ -1,0 +1,450 @@
+/*-----------------------------------------------------------------------------------*/
+/* CSS Reset & Clearfix - http://meyerweb.com/eric/tools/css/reset/
+/*-----------------------------------------------------------------------------------*/
+
+*{
+    line-height: 20px;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; } body { line-height: 1; } ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Document Setup
+/*-----------------------------------------------------------------------------------*/
+
+
+body{
+    background: white;
+    color: #939393;
+    text-align: right;
+    direction: rtl;
+    font-size: 13px;
+}
+
+
+@font-face {
+    font-family: 'HacenSaudiArabia';
+    src: url('../fonts/hacen_saudi_arabia.eot');
+    src: url('../fonts/hacen_saudi_arabia.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/hacen_saudi_arabia.woff') format('woff'),
+        url('../fonts/hacen_saudi_arabia.ttf') format('truetype'),
+        url('../fonts/hacen_saudi_arabia.svg#hacen_saudi_arabia') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.hacen {
+    font-family:'HacenSaudiArabia', Tahoma, Arial;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px;
+    padding-bottom: 20px;
+}
+
+
+#container {
+    margin: 0 auto 0 auto;
+    width: 980px;
+    z-index: 2;
+    visibility: visible;
+    display: block;
+    clear: both;
+    padding-bottom: 10px;
+}
+
+#content{
+    width: 846px;
+    margin: 0 auto;
+}
+
+#content-wrapper {
+    background: white;
+
+    top: -40px;
+    z-index: 2;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: block;
+    height: 100%;
+    -webkit-box-shadow: 0 1px 3px #B9BBBE;
+    -moz-box-shadow: 0 1px 3px #b9bbbe;
+    box-shadow: 0 1px 3px #B9BBBE;
+    border: 1px solid #B9BBBE;
+    border-bottom: 1px solid #B2B2B6;
+    border-top: none;
+
+    background:#f5f5f5;
+}
+
+#inner-page-content {   
+    width: 100%;
+    display: block;
+    min-height: 600px;
+    display: inline-block;
+    padding-top: 21px;
+    background-image: URL(../images/kalamona-watermark.png);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 100px 300px;
+}
+
+#homepage-content{
+    width: 100%;
+    display: block;
+    min-height: 600px;
+    padding-top: 21px;
+    display: block;
+}
+
+.welcome-screen{
+    background: #4283ad;
+    height: 325px;
+    margin-top: -21px;
+    width: 100%;
+}
+
+.inside-top-screen{
+    background: #4283ad;
+    height: 137px;
+    margin-top: -21px;
+    width: 100%;
+}
+
+
+.horizontal-seperator {
+    height: 1px;
+    float: left;
+    width: 82.5%;
+    margin-left: 75px;
+    background: gainsboro;
+    border-bottom: 1px solid white;
+    margin-top: 21px;
+}
+
+.welcome-screen-description{
+    color: rgb(227, 232, 236);
+    width: 346px;
+    line-height: 22px;
+    font-size: 14px;
+    position: relative;
+    right: 267px;
+    top: -140px;
+}
+
+.main_title{
+    color: #598ea7;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.inside-top-screen #content .welcome-inside-message{
+    background-image: URL(../images/kalamona-message.png);
+    background-repeat: no-repeat;
+    width: 336px;
+    height: 108px;
+    display: block;
+    float: right;
+    position: relative;
+    top: 15px;
+}
+
+.inside-top-screen #content .social-network{
+    float: left;
+    position: relative;
+    top: 40px;
+}
+
+.inside-top-screen #content .social-network .facebook{
+    background-image: URL(../images/facebook.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;    
+}
+.inside-top-screen #content .social-network .twitter{
+    background-image: URL(../images/twitter-icon.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;    
+}
+.inside-top-screen #content .social-network .linkedin{
+    background-image: URL(../images/linkedin-icon.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;    
+}
+.inside-top-screen #content .social-network .google{
+    background-image: URL(../images/google-icon.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;    
+}
+
+a{
+    color: #00a1c7;
+    text-decoration: none;
+}
+
+a:hover{
+   color: #19bee5;
+   text-decoration: underline;
+}
+
+.active-img{
+    background-image: URL(../images/active.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.inactive-img{
+    background-image: URL(../images/inactive.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.inside-btn-place{
+    float: left;
+    position: relative;
+    top: 20px;
+}
+
+.home-content{
+    width: 842px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.home-registration-info{
+    float: right;
+    width:270px;   
+    margin-left: 20px;
+    line-height: 20px;
+    margin-top: 30px;
+}
+
+.box{
+    background-image: URL(../images/box-background.png);
+    background-repeat: no-repeat;
+    width:  252px;
+    min-height: 52px;
+    display: block;
+    float: right;
+    margin-left: 10px;
+    margin-left: 10px;
+}
+
+.box-separator{
+    background-image: URL(../images/home-box-separator.png);
+    background-repeat: no-repeat;
+    width: 1px;
+    height: 66px;
+    display: block;
+    float: right;
+    margin-right: 5px;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.box ul{
+    margin-top: 20px;
+    margin-right: 17px;
+}
+
+.box ul .field-group{
+    float:right;
+    clear:both;
+    margin-bottom:10px;
+}
+
+.clear{
+    clear: both;
+    height: 5px;
+}
+
+.login-btn{
+    border: none;
+    background-image: URL(../images/login-btn.png)!important;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 29px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a#signup-btn{
+    clear: both;
+    background-image: URL(../images/new-user.png)!important;
+    background-repeat: no-repeat;
+    width: 125px;
+    height: 29px;
+    display: block;
+    cursor: pointer;
+}
+
+.btn-box{
+    background-image: URL(../images/dashboard-btn-box.png);
+    background-repeat: no-repeat;
+    width: 209px;
+    height: 130px;
+    display: block;
+    float: right;    
+}
+.btn-box div{
+    color: #FFF;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 11px;
+    width: 195px;
+}
+
+.btn-box .btn{
+    background-repeat: no-repeat;
+    width: 193px;
+    height: 35px;
+    display: block;   
+    margin-right: 8px;
+    margin-top: 10px;
+}
+
+.btn-box .exams-btn{
+    background-image: URL(../images/exams-btn.png);    
+}
+
+.btn-box .training-btn{
+    background-image: URL(../images/training-btn.png);
+}
+
+.btn-box-separator{
+    float: right;
+    width: 1px;
+    border-right: 1px solid #dcdcdc;
+    height: 66px;
+    margin-top: 25px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: block;
+}
+
+#footer{    
+    clear: both;
+    position: relative;
+    top: 10px;
+    text-align: center;
+}
+
+#footer a{
+    color: #a9a9a9;
+    font-size: 11px;
+    margin-left: 30px;
+}
+
+#menu_groups{
+   width: 650px;
+   float: right;
+   display: block;
+   border-left: dashed 1px #CCC;
+   margin-top: 30px;
+}
+
+#assessment-list{
+    width: 173px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.assessment-name-box{
+    background-image: URL(../images/assessment-name.png);
+    background-repeat: no-repeat;
+    width: 173px;
+    height: 15px;
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px 0px;
+    margin-bottom: 10px;
+}
+
+.no-assessment{
+    color: #FF0000;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+}
+
+.assessment-menu-separator{
+    width: 1px;
+    height: 300px;
+    border-right: dashed 1px #CCC;
+    display: block;
+    float: right;
+    position: relative;
+    top: 30px;
+}
+
+.assessment-item-separator{
+    background-image: URL(../images/assessment-item-separator.png);
+    background-repeat: no-repeat;
+    width: 630px;
+    min-height: 54px;
+    display: block;
+    padding-top: 10px; 
+    padding-right: 20px; 
+    margin-top: 10px;
+    clear: right;
+}
+
+.assessment-name-box-inside{
+    background-image: URL(../images/assessment-name.png);
+    background-repeat: no-repeat;
+    width: 173px;
+    height: 19px;
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.completed_assessment-inside{
+    background-image: URL(../images/assessment-name.png);
+    background-repeat: no-repeat;
+    width: 173px;
+    height: 19px;
+    display: inline-block;
+    color: #f57d2e;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.h-line{
+    height: 1px;
+    width: 98%;
+    border-bottom: #CCC 1px dashed;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}

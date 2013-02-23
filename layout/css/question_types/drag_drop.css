@@ -1,0 +1,119 @@
+
+/*-----------------------------------------------------------------------------------*/
+/* Document Setup
+/*-----------------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Dropdown Questions
+/*-----------------------------------------------------------------------------------*/
+
+.dragndrop-question-wrapper{
+    padding: 20px 12px 20px 12px;
+    width: 960px;
+    margin: 0 auto;
+    color: #454545;
+
+    padding-bottom: 240px;
+    -webkit-box-shadow: 0 1px 3px #B9BBBE;
+    -moz-box-shadow: 0 1px 3px #b9bbbe;
+    box-shadow: 0 1px 3px #B9BBBE;
+    border: 1px solid #B9BBBE;
+    border-bottom: 1px solid #B2B2B6;
+    border-top: none;
+    background: rgb(252, 252, 252);
+}
+
+.a-list, .b-list{
+    width: 200px;
+    float: right;
+}
+
+.h-line{
+    clear: right;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    height: 1px;
+    width: 100%;
+}
+
+
+.a-list
+{
+    margin-right: 35px;
+}
+
+
+.a-list-item, .b-list-item{
+    width: 100%;
+    padding: 7px 8px;
+    background: rgb(233, 233, 233);
+    border: 1px solid rgb(202, 202, 202);
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-right: 2px solid rgb(211, 211, 211);
+    border-bottom: 2px solid rgb(211, 211, 211);
+}
+
+
+.b-list-item{
+    border-right: 2px solid rgb(211, 211, 211);
+    border-bottom: 2px solid rgb(211, 211, 211);
+}
+
+
+.a-list-item span{
+    width: 9px;
+    height: 15px;
+    background: white;
+    display: block;
+    float: right;
+    position: relative;
+    left: 10px;
+    background: white;
+    border: 1px solid rgb(202, 202, 202);
+    border-left: 2px solid rgb(202, 202, 202);
+    border-right: none;
+}
+
+.connected-active-item{
+    position: relative;
+    left: -18px;
+    z-index: 200;
+}
+
+.b-list-item:hover, .b-list-item:hover span{
+    background: rgb(204, 204, 204);
+    border-color: rgb(184, 184, 184);
+}
+
+.b-list-item span{
+    width: 9px;
+    height: 15px;
+    background: white;
+    display: block;
+    float: left;
+    position: relative;
+    left: -18px;
+    background: rgb(233, 233, 233);
+    border: 1px solid rgb(202, 202, 202);
+    border-right: none;
+}
+
+
+.placeHolder{ width: 211px;
+              margin-bottom: 9px;
+              padding: 7px 8px;
+              background-color: white !important;
+              border: dashed 1px gray !important;}
+
+.placeHolder span{
+    width: 9px;
+    height: 15px;
+    display: block;
+    float: left;
+    position: relative;
+    left: -18px;
+    background: white;
+    border: 1px dashed gray;
+    border-right: 0;
+}

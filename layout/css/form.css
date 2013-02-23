@@ -1,0 +1,391 @@
+.form-label{
+    font-size: 12px;
+    color: #939393;
+    display: block;
+    float: right;
+    margin: 0;
+    text-align: left;
+    width: 150px;
+    clear: right;
+    position: relative;
+    top: 13px;
+    height: 35px;
+}
+
+.error {
+    /* supply height to ensure consistent positioning for every browser */
+
+    font-size:11px;
+    color:#DD3C10;
+
+    margin-right: 10px;
+    font-weight: bold;
+}
+input.invalid {
+    color: #323232;
+    border-color: #DD3C0F !important;
+    background-color: #FFF9F9 !important;
+    outline: 0;
+    outline: thin dotted 9;
+}
+
+select.invalid {
+    color: #323232;
+    border-color: #DD3C0F !important;
+    background-color: #FFF9F9 !important;
+    background-position: -1px -57px !important;
+    outline: 0;
+    outline: thin dotted 9;
+}
+
+textarea.invalid {
+    color: #323232;
+    border-color: #DD3C0F !important;
+    background-color: #FFF9F9 !important;
+    outline: 0;
+    outline: thin dotted 9;
+}
+
+
+input[type="custom-checkbox"].invalid {
+    color: #323232;
+    border-color: #DD3C0F !important;
+    background-color: #FFF9F9 !important;
+    background-position: 0px 0px !important;
+    outline: 0;
+    outline: thin dotted 9;
+}
+
+.error p{
+    display: block;
+    width: 220px;
+    text-align: right;
+}
+
+.form-label-website-link{
+    font-size: 13px;
+    color: #797979;
+    display: block;
+    float: right;
+    margin: 0;
+    text-align: right;
+    position: relative;
+    top: 8px;
+    margin-left: 5px;
+}
+
+input[type="text"],input[type="email"], input[type="password"], input[type="url"],input[type="number"]{
+    font-family:'HacenSaudiArabia', Tahoma, Arial;
+    height: 27px;
+    font-size: 13px;
+    border: 1px solid #e4e4e4;
+    padding: 4px 13px 4px 13px;
+    float: right;
+    clear: left;
+    width: 220px;
+    background-color: #f9f9f9;
+    position: relative;
+    margin-right: 5px;
+    color: #8E8E8E;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.07);
+
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: inset 0 1px 14px rgba(0, 0, 0, 0.07);
+
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+
+input[type="text"]:focus, input[type="email"]:focus,  input[type="password"]:focus,input[type="url"]:focus,input[type="number"]:focus, textarea:focus{
+    border-color: #D6D6D6;
+    outline: 0;
+    background: #FDFDFD;
+}
+
+textarea{
+    font-family:'HacenSaudiArabia', Tahoma, Arial;
+    height: 140px;
+    font-size: 13px;
+    border: 1px solid #e4e4e4;
+    padding: 9px 13px 9px 13px;
+    float: right;
+    clear: left;
+    width: 390px;
+    background-color: #f9f9f9;
+    position: relative;
+    margin-right: 8px;
+    color: #8E8E8E;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.07);
+
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: inset 0 1px 14px rgba(0, 0, 0, 0.07);
+
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    resize: none;
+}
+
+
+.field-group{
+    float:right;
+    clear:both;
+    margin-top:21px;
+}
+
+.select-options-wrapper {
+    width: 254px;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    padding: 0;
+    margin-left: 18px;
+    margin-top: -2px;
+
+}
+
+select.custom-select {
+    font-family:'HacenSaudiArabia', Tahoma, Arial;
+    -webkit-appearance: none;
+    background-image: url(../images/select-dropdown-arrow-menu.png);
+    background-position: -1px 0px;
+    background-repeat: no-repeat;
+    margin-right: 6px;
+    font-size: 13px;
+    border: 1px solid #e4e4e4;
+    padding: 8px 13px 8px 51px;
+    float: right;
+    clear: left;
+    width: 247px;
+    background-color: #f9f9f9;
+    position: relative;
+    color: #8E8E8E;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.07);
+
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: inset 0 1px 14px rgba(0, 0, 0, 0.07);
+}
+
+select.custom-select:focus{
+    outline: none;
+    display:block;    
+    border: none;	
+
+    background-image: url(../images/select-dropdown-arrow-menu.png);
+    background-position: -1px 0px;
+    background-repeat: no-repeat;
+
+    border: 1px solid #e4e4e4;
+}
+.form-label-checkbox{
+    font-size: 13px;
+    color: #797979;
+    display: block;
+    float: right;
+    margin: 0;
+    text-align: right;
+    position: relative;
+    top: 3px;
+    margin-left: 0px;
+}
+
+.custom-checkbox{
+    width: 20px;
+    height: 20px;
+    background-color: #FAFAFA;
+    border: 1px solid #CACECE;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    float: right;
+    margin-right: 7px;
+    top: 7px;
+    cursor: pointer;
+
+}
+
+.custom-checkbox:active{
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.custom-checkbox-checked{
+    background-image: url(../images/checked-icon.png);
+    background-repeat: no-repeat;
+    background-color: #E9ECEE;
+    border: 1px solid #ADB8C0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #99A1A7;
+}
+
+.action-buttons-wrapper{
+    float: left;
+    clear: both;
+    margin-right: 88px;
+    margin-top: 27px;
+}
+
+.save-button-round:hover{
+    background-position: -113px 0px;
+}
+
+.btns{
+    clear: both;
+    position: relative;
+    top: 10px;
+    margin-right: 155px;
+}
+
+.submit-btn, a.submit-btn {
+    font-family:'HacenSaudiArabia', Tahoma, Arial;
+    font-size: 12px;
+    background-color: #52a8e8;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #52a8e8), color-stop(100%, #377ad0));
+    background-image: -webkit-linear-gradient(top, #52a8e8, #377ad0);
+    background-image: -moz-linear-gradient(top, #52a8e8, #377ad0);
+    background-image: -ms-linear-gradient(top, #52a8e8, #377ad0);
+    background-image: -o-linear-gradient(top, #52a8e8, #377ad0);
+    background-image: linear-gradient(top, #52a8e8, #377ad0);
+    border-top: 1px solid #4081af;
+    border-right: 1px solid #2e69a3;
+    border-bottom: 1px solid #20559a;
+    border-left: 1px solid #2e69a3;
+    border-radius: 16px;
+    -webkit-box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+    box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+    color: #fff;
+    padding: 3px 10px;
+    text-align: center;
+    text-shadow: 0 -1px 1px #3275bc;
+    -webkit-background-clip: padding-box;
+}
+
+.submit-btn:hover {
+    background-color: #3e9ee5;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3e9ee5), color-stop(100%, #206bcb));
+    background-image: -webkit-linear-gradient(top, #3e9ee5 0%, #206bcb 100%);
+    background-image: -moz-linear-gradient(top, #3e9ee5 0%, #206bcb 100%);
+    background-image: -ms-linear-gradient(top, #3e9ee5 0%, #206bcb 100%);
+    background-image: -o-linear-gradient(top, #3e9ee5 0%, #206bcb 100%);
+    background-image: linear-gradient(top, #3e9ee5 0%, #206bcb 100%);
+    border-top: 1px solid #2a73a6;
+    border-right: 1px solid #165899;
+    border-bottom: 1px solid #07428f;
+    border-left: 1px solid #165899;
+    -webkit-box-shadow: inset 0 1px 0 0 #62b1e9;
+    box-shadow: inset 0 1px 0 0 #62b1e9;
+    cursor: pointer;
+    text-shadow: 0 -1px 1px #1d62ab;
+    -webkit-background-clip: padding-box;
+    text-decoration: none;
+}
+
+.assessment-btn{
+    background-image: URL(../images/assessments-btns.png);
+    background-repeat: no-repeat;
+    width: 203px;
+    height: 24px;
+    display: inline-block;
+    color: #4183ad;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    float: right;
+    margin-left: 5px;    
+}
+.assessment-btn:hover{
+    background-position: -203px 0px;
+    color: #FFF;   
+    text-decoration: none;
+}
+
+.assessment-active{
+    background-image: URL(../images/assessments-btns.png);
+    background-repeat: no-repeat;
+    background-position: -203px 0px;
+    width: 204px;
+    height: 24px;
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.btn-with-long-text{
+    padding: 2px 0!important;
+    height: 40px!important;
+}
+
+.start-exams{
+    background-image: URL(../images/start-exams.png);
+    background-repeat: no-repeat;
+    width: 173px;
+    height: 55px;
+    display: block;
+    margin-top: 40px;
+}
+
+.start-trainings{
+    background-image: URL(../images/start-training.png);
+    background-repeat: no-repeat;
+    width: 173px;
+    height: 55px;
+    display: block;
+    margin-top: 40px;
+}
+
+.start-current-training{
+    border: none;
+    background-image: URL(../images/start_current-training.png);
+    background-repeat: no-repeat;
+    width: 173px;
+    height: 55px;
+    display: block;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.next{
+    background-image: URL(../images/next-btn.png);
+    background-repeat: no-repeat;
+    width: 173px;
+    height: 55px;
+    display: block;
+    margin-top: 40px;
+}
+
+h1{
+    position: relative;
+    color: #4183ad;
+    font-size: 16px;
+    right: 14px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+h1 span{
+    color: #f57d2e;
+}

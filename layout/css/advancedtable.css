@@ -1,0 +1,305 @@
+
+.labels-table-wrapper{
+    float:left;
+    width: 742px;
+    margin-left: 13px;
+}
+
+table.datagrid {
+    border:1px solid #DDDDDD;
+    border-collapse:collapse;
+}
+
+.labels-table-wrapper ul {
+    border:0;
+    margin:0;
+    padding:0;
+}
+.tableInfo{
+    float: left;
+    margin-top: 5px;
+    font-family: arial;
+    font-size: 11px;
+}
+
+.advancedtable tbody td{
+    border-bottom:1px solid #DDD;
+    padding: 3px 0px;
+    padding-left: 10px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.advancedtable thead th{
+    padding-bottom: 1px;
+    padding-top: 1px;
+    height: 20px;
+    padding-left: 10px;
+    vertical-align: center;
+    border: none;
+    border-bottom: 2px solid #DEDEDE;
+    text-shadow: 0 1px 0 white;
+    color: #CCC !important;
+    color: #565656 !important;
+    font-size: 12px;
+    font-weight: regular;
+
+}
+
+/** ROWS PER PAGE NAVIGATION **/
+.tablePerPage{
+    float: right;
+}
+.tablePerPage span{
+    float: left;
+    margin-top: 5px;
+}
+.tablePerPage ul{
+    float: right;
+}
+.tablePerPage li {
+    border:0;
+    margin:0;
+    padding:0;
+    font-size:11px;
+    list-style:none;
+    float: left;
+}
+.tablePerPage a {
+    border-right:solid 1px #BBB;
+    margin-right:2px;
+}
+.tablePerPage .previous-off, .tablePerPage .next-off {
+    color:#888888;
+    display:block;
+    float:left;
+    font-weight:bold;
+    padding:3px 4px;
+}
+.tablePerPage .next a, .tablePerPage previous a {
+    border:none;
+    font-weight:bold;
+}
+.tablePerPage .active {
+    font-weight:bold;
+    color: #FFF;
+}
+.tablePerPage a:link, .tablePerPage a:visited {
+    color:#333;
+    display:block;
+    float:left;
+    padding:3px 6px;
+    text-decoration:underline;
+}
+.tablePerPage a:hover {
+    text-decoration:none;
+}
+
+/** PAGE SELECTOR **/
+.tableNavigation{
+    float:right;
+    margin-left: 50px;
+}
+.tableNavigation span{
+    float: left;
+    margin-top: 3px;
+}
+.tableNavigation ul{
+    float: right;
+}
+.tableNavigation li {
+    border:0;
+    margin:0;
+    padding:0;
+    font-size:11px;
+    list-style:none;
+    float: left;
+}
+.tableNavigation a {
+    border:solid 1px #BBB;
+    margin-right:2px;
+    color:#999;
+}
+.tableNavigation .active a {
+    color:#000;
+    font-weight:bold;
+    border:solid 1px #000;
+}
+.tableNavigation a:link,  .tableNavigation a:visited {
+    display:block;
+    float:left;
+    padding:3px 6px;
+    text-decoration:none;
+}
+.tableNavigation a:hover {
+    color: #333;
+}
+
+.labels-table-wrapper tfoot td{
+    background-color:#EBEBEB;
+    background-repeat:repeat-x;
+    color:#000000;
+    font-size:11px;
+    padding:0.6em;
+}
+
+.labels-table-wrapper  tr:hover{
+    background:#FFC !important;
+}
+
+.labels-table-wrapper  tr{
+    cursor: default;
+
+}
+.labels-table-wrapper  tr.odd{
+    background: #F1F1F1;
+
+    -webkit-transition: background 0.1s;
+    -moz-transition: background 0.1s;
+    -o-transition: background 0.1s;
+    -ms-transition: background 0.1s;
+    transition: background 0.1s;
+}
+.labels-table-wrapper  tr.even{
+    background: white;
+    -webkit-transition: background 0.1s;
+    -moz-transition: background 0.1s;
+    -o-transition: background 0.1s;
+    -ms-transition: background 0.1s;
+    transition: background 0.1s;
+}
+
+.labels-table-list {
+    overflow: auto;
+    width: 291px;
+    margin-top: 3px;
+    float: left;
+}
+
+.labels-table-list li {
+    position: relative;
+    line-height: inherit;
+    border: 1px solid #CCC;
+    display: inline-block;
+    margin-left: 4px;
+    margin-top: 2px;
+    position: relative;
+    cursor: pointer;
+    top: 2px;
+}
+
+.label-name {
+    float: left;
+    padding: 2px 7px;
+    font-size: 10px;
+    line-height: 12px;
+
+}
+.gray-mode{
+    background: #DDD;
+    color: #666;
+}
+
+.gray-mode:hover{
+    color: #DDD;
+    background: #666; 
+}
+
+.orange-mode{
+    color: white;
+    background: #FF7537;
+}
+
+.orange-mode:hover{
+    background-color: white;
+    color: #FF7537;
+}
+
+.green-mode{
+    background-color: #16A765;
+    color: white;
+}
+
+.green-mode:hover{
+    background-color: white;
+    color: #16A765;
+
+}
+
+#loader{
+    float: right;
+    margin-right: 5px;
+    margin-top: 0px;
+}
+
+
+input.labels-table-search
+{
+    width: 245px;
+    float: right;
+    margin-left: 13px;
+    display: inline-block;
+    height: 29px;
+    margin: 0;
+    padding: 0 8px;
+    background: white;
+    border: 1px solid #D9D9D9;
+    border-top: 1px solid silver;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    margin-left: 0px;
+    margin-top: -5px;
+    font-size: 12px;
+    clear: right;
+    margin-bottom: 20px;
+}
+
+input.labels-table-search:hover{
+    border: 1px solid #b9b9b9;
+    border-top: 1px solid #a0a0a0;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+input.labels-table-search:focus{
+    outline: none;
+    border: 1px solid #4d90fe;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+
+.label-large-title{
+    float: left;
+    font-size: 21px;
+    margin-top: -3px;
+    font-weight: bold;
+}
+
+.jobseeker-image{
+
+    width: 18px;
+    height: 22px;
+    border-radius: 2px 0 0 2px;
+    float: left;
+    margin-left: -7px;
+}
+
+
+a.table-name-anchor{
+    color: #2890B6;
+    text-decoration: none;
+    float: left;
+    padding-top: 3px;
+    margin-left: 12px;
+}
+
+a.table-name-anchor:hover{
+    text-decoration: underline;
+}
