@@ -299,13 +299,13 @@ select.custom-select:focus{
     background-image: URL(../images/assessments-btns.png);
     background-repeat: no-repeat;
     width: 203px;
-    height: 24px;
+    height: 20px;
     display: inline-block;
     color: #4183ad;
     text-decoration: none;
     text-align: center;
     font-size: 14px;
-    padding: 10px 0px;
+    padding: 12px 0px;
     cursor: pointer;
     margin-bottom: 5px;
     float: right;
@@ -322,13 +322,13 @@ select.custom-select:focus{
     background-repeat: no-repeat;
     background-position: -203px 0px;
     width: 204px;
-    height: 24px;
+    height: 20px;
     display: inline-block;
     color: #FFF;
     text-decoration: none;
     text-align: center;
     font-size: 14px;
-    padding: 10px 0px;
+    padding: 12px 0px;
     cursor: pointer;
     margin-bottom: 5px;
 }
