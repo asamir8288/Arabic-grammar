@@ -10,7 +10,6 @@ Doctrine_Manager::getInstance()->bindComponent('Assessments', 'default');
  * @property integer $id
  * @property integer $menu_id
  * @property string $name
- * @property decimal $assessment_time
  * @property string $description
  * @property timestamp $created_at
  * @property timestamp $updated_at
@@ -50,15 +49,6 @@ abstract class BaseAssessments extends Doctrine_Record
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
              'length' => 255,
-             'fixed' => false,
-             'unsigned' => false,
-             'primary' => false,
-             'notnull' => false,
-             'autoincrement' => false,
-             ));
-        $this->hasColumn('assessment_time', 'decimal', 10, array(
-             'type' => 'decimal',
-             'length' => 10,
              'fixed' => false,
              'unsigned' => false,
              'primary' => false,

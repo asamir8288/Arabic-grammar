@@ -1,4 +1,5 @@
-<a class="inside-btn-place submit-btn" href="<?php echo site_url('admin/assessment/create_question/' . $assessment_id)?>">انشاء سؤال جديد</a>
+<a class="inside-btn-place submit-btn" href="<?php echo site_url('admin/assessment/create_question/' . $assessment_id)?>">إضافة سؤال جديد</a>
+<a class="inside-btn-place submit-btn" style="margin-left: 15px;" href="<?php echo site_url('admin/assessment')?>">قائمة الاختبارات</a>
 <div style="clear: both;height: 20px;"></div>
 <input name="search" class="labels-table-search" type="text" id="search" placeholder="بحث عن اسئلة ..." style="display:none;" /><div id="loader" style="display:none;"><img src="<?php echo static_url(); ?>layout/images/loader.gif" alt="Laoder" /></div>
 
@@ -17,7 +18,7 @@
     <tbody>
         <?php foreach ($questions as $question) { ?>
             <tr>
-                <td><a title="<?php echo $question['question'];?>" href="<?php echo base_url();?>"><?php echo (strlen($question['question'])>100) ? substr($question['question'], 0, 100) : $question['question']; ?></a></td>
+                <td><a title="<?php echo $question['question'];?>" href="#"><?php echo (strlen($question['question'])>100) ? substr($question['question'], 0, 100) : $question['question']; ?></a></td>
                 <td><?php echo $question['QuestionTypes']['name']; ?></td>
                 <td><?php echo $question['DifficultyLevels']['name']; ?></td>
                 <td>
@@ -34,7 +35,7 @@
                     ?>
                 </td>
                 <td><?php echo date('d-m-Y', strtotime($question['created_at'])); ?></td>
-                <td><?php echo anchor(site_url('admin/assessment/delete/' . $question['id']), 'حذف'); ?></td>                
+                <td><?php echo anchor(site_url('admin/assessment/delete_question/' . $question['id'] . '/'. $assessment_id), 'حذف'); ?></td>                
             </tr>
         <?php } ?>
     </tbody>

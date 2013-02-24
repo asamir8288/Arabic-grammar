@@ -30,6 +30,7 @@ class QuestionsTable extends Doctrine_Table {
                 ->select('COUNT(q.id) as q_count')
                 ->from('Questions q')
                 ->where('q.assessment_id =?', $id)
+                ->andWhere('q.deleted=0')
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->fetchOne();
 
@@ -41,6 +42,7 @@ class QuestionsTable extends Doctrine_Table {
                         ->select('q.*, qt.name, qdl.name')
                         ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl')
                         ->where('q.assessment_id=?', $assessment_id)
+                        ->andWhere('q.deleted=0')
                         ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                         ->execute();
     }
@@ -49,7 +51,8 @@ class QuestionsTable extends Doctrine_Table {
         $q = Doctrine_Query::create()
                 ->select('q.*, qt.name, qdl.name, qa.*')
                 ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl, q.QuestionAnswers qa')
-                ->where('q.assessment_id=?', $assessment_id);
+                ->where('q.assessment_id=?', $assessment_id)
+                ->andWhere('q.deleted=0');
         if ($question_id) {
             $q = $q->andWhere('q.id > ?', $question_id);
         }
@@ -57,8 +60,8 @@ class QuestionsTable extends Doctrine_Table {
                 ->limit(1)
                 ->orderBy('q.id ASC')
                 ->fetchOne();
-        
-        if($question_id){
+
+        if ($question_id) {
             $ua = new UserAssessments();
             $ua->decreaseAssessmentQuestionsNumber($assessment_id);
         }

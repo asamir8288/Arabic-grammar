@@ -8,7 +8,10 @@
         <label class="form-label" for="">الاجابة :</label>
         <div style="float: right;">
             <input type="text" autocomplete="off" data-items="6" data-provide="typeahead" name="answer_text" placeholder="" class="input-medium tagManager" data-original-title=""/>
-        </div>            
+        </div>  
+        <span style="position: relative;top: 7px;right: 5px;color: rgb(243, 151, 12);">
+            رجاء إدخال الإجابة الصحيحة كأول اختيار
+        </span>
     
 </li>
 

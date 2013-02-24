@@ -36,6 +36,11 @@ class Current_User extends CI_Model {
             return false;
         }
     }
+    
+    public function logout(){
+        $CI = & get_instance();
+        $CI->session->sess_destroy();
+    }
 
 }
 

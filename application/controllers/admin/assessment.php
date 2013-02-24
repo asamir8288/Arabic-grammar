@@ -132,6 +132,13 @@ class Assessment extends CI_Controller {
         $this->load->view('backend/assessments/question_types/drag_and_drop');
     }
     
+    public function delete_question($question_id, $assessment_id){
+        $q = new Questions();
+        $q->deleteQuestion($question_id);
+        
+        redirect(site_url('admin/assessment/manage_questions/' . $assessment_id));
+    }
+    
 
 }
 

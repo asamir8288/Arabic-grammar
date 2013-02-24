@@ -6,8 +6,13 @@
             if (strlen($item['name']) > 50) {
                 $class = ' btn-with-long-text';
             }
+            
+            $style= '';
+            if($item['question_count'] > 0){
+                $style = 'id="valid-assessment"';
+            }
             ?>
-            <a menu_id="<?php echo $item['id']; ?>" class="assessment-btn<?php echo $class?>"><?php echo $item['name']; ?></a>
+        <a menu_id="<?php echo $item['id']; ?>" class="assessment-btn<?php echo $class?>" <?php echo $style;?>><?php echo $item['name']; ?></a>
     <?php } ?>
     </div>
     <div class="clear"></div>

@@ -19,7 +19,8 @@ class AssessmentsTable extends Doctrine_Table
     
     public static function getAllAssessments(){
         return Doctrine_Query::create()
-                ->select('a.*')
+                ->select('a.*,
+                    (SELECT COUNT(q.id) FROM Questions q WHERE q.assessment_id=a.id AND q.deleted=0) AS assessment_questions')
                 ->from('Assessments a')
                 ->where('a.deleted=0')
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)

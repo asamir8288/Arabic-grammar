@@ -51,4 +51,12 @@ class Questions extends BaseQuestions
         
         return $q->id;
     }
+    
+    public function deleteQuestion($question_id){
+        Doctrine_Query::create()
+                ->update('Questions q')
+                ->set('q.deleted', '?', true)
+                ->where('q.id =?', $question_id)
+                ->execute();
+    }
 }

@@ -18,12 +18,12 @@ if (!defined('BASEPATH'))
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */
 
-//$hook['post_controller_constructor'][] = array(
-//    'class' => 'ACL',
-//    'function' => 'is_allowed',
-//    'filename' => 'acl.php',
-//    'filepath' => 'hooks'
-//);
+$hook['post_controller_constructor'][] = array(
+    'class' => 'ACL',
+    'function' => 'is_allowed',
+    'filename' => 'acl.php',
+    'filepath' => 'hooks'
+);
 //
 //$hook['post_controller_constructor'][] = array(
 //    'class' => 'Localization',

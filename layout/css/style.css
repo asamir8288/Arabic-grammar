@@ -197,8 +197,8 @@ a{
 }
 
 a:hover{
-   color: #19bee5;
-   text-decoration: underline;
+    color: #19bee5;
+    text-decoration: underline;
 }
 
 .active-img{
@@ -354,11 +354,11 @@ a#signup-btn{
 }
 
 #menu_groups{
-   width: 650px;
-   float: right;
-   display: block;
-   border-left: dashed 1px #CCC;
-   margin-top: 30px;
+    width: 650px;
+    float: right;
+    display: block;
+    border-left: dashed 1px #CCC;
+    margin-top: 30px;
 }
 
 #assessment-list{
@@ -405,8 +405,8 @@ a#signup-btn{
     width: 630px;
     min-height: 54px;
     display: block;
-    padding-top: 10px; 
-    padding-right: 20px; 
+    padding-top: 20px; 
+    padding-right: 8px; 
     margin-top: 10px;
     clear: right;
 }
@@ -447,4 +447,20 @@ a#signup-btn{
     border-bottom: #CCC 1px dashed;
     margin-bottom: 15px;
     margin-top: 15px;
+}
+
+.login-logout-place{
+    clear: left;
+    float: left;
+    position: relative;
+    top: 70px;
+    left: 0;
+}
+
+.login-logout-place a{
+    color: #FFF;
+}
+
+#valid-assessment{
+    color: rgb(12, 173, 5);font-weight: bold;
 }

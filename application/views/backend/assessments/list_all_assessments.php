@@ -1,4 +1,4 @@
-<a class="inside-btn-place submit-btn" href="<?php echo site_url('admin/assessment/create')?>">انشاء اختبار جديد</a>
+<a class="inside-btn-place submit-btn" href="<?php echo site_url('admin/assessment/create')?>">إضافة اختبار جديد</a>
 <div style="clear: both;height: 20px;"></div>
 <input name="search" class="labels-table-search" type="text" id="search" placeholder="بحث عن امتحانات ..." style="display:none;" /><div id="loader" style="display:none;"><img src="<?php echo static_url(); ?>layout/images/loader.gif" alt="Laoder" /></div>
 
@@ -7,7 +7,7 @@
     <thead>
         <tr>
             <th>اسم الامتحان</th>
-            <th>زمن الامتحات</th>
+            <th>عدد الأسئلة</th>
             <th>هل تم تفعيله؟</th>
             <th>تاريخ الانشاء</th>
             <th></th>
@@ -17,7 +17,7 @@
         <?php foreach ($assessments as $assessment) { ?>
             <tr>
                 <td><a href="<?php echo site_url('admin/assessment/manage_questions/'. $assessment['id']);?>"><?php echo $assessment['name']; ?></a></td>
-                <td><?php echo $assessment['assessment_time']; ?></td>
+                <td><?php echo $assessment['assessment_questions']; ?></td>
                 <td>
                     <?php
                     if ($assessment['published']) {

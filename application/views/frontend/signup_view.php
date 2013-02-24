@@ -21,7 +21,7 @@
         <label class="form-label" for="">المرحلة الدراسية :</label>
         <div class="select-options-wrapper">
             <select class="custom-select" id="grade_id" name="grade_id">
-                <option value="">اختار</option>
+                <option value="">اختر</option>
                 <?php foreach($grades as $grade){ ?>
                     <option value="<?php echo $grade['id'];?>"><?php echo $grade['name'];?></option>
                 <?php }?>

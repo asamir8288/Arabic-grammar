@@ -31,6 +31,9 @@
                                     <a href="" class="google"></a>
                                     <a href="" class="linkedin"></a>
                                 </div>
+                                <div class="login-logout-place">
+                                    <a href="<?php echo site_url('login/logout');?>">تسجيل الخروج</a>
+                                </div>
                             </div>
                         </div>
                         <div id="content">
@@ -44,7 +47,14 @@
                         <div id="footer">
                             <a href="">دار العالم العربي</a>
                             <a href="">اتصل بنا</a>
-                            <a href="<?php echo site_url('signup');?>">انضم الينا</a>
+                            <?php 
+                                $user_info = $this->session->userdata('user_info');
+                                if($user_info){
+                            ?>
+                            <a href="<?php echo site_url('dashboard');?>">الرئيسية</a>
+                            <?php }else{ ?>
+                                <a href="<?php echo site_url('signup');?>">انضم الينا</a>
+                            <?php }?>
                         </div>
                     </div>
                     <div class="clear" style="height: 25px;"></div>

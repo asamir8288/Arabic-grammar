@@ -29,7 +29,7 @@
         <label class="form-label" for="">نمط الاختبار :</label>
         <div class="select-options-wrapper">
             <select class="custom-select" id="type_id" name="type_id">
-                <option value="">اختار</option>
+                <option value="">اختر</option>
                 <?php foreach ($questionTypes as $item) { ?>
                     <option value="<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
                 <?php } ?>
@@ -41,7 +41,7 @@
         <label class="form-label" for="">حدد درجة الصعوبة :</label>
         <div class="select-options-wrapper">
             <select class="custom-select" id="q_difficulty" name="difficulty_level">
-                <option value="">اختار</option>
+                <option value="">اختر</option>
                 <?php foreach ($questionDiffeculty as $item) { ?>
                     <option value="<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
                 <?php } ?>

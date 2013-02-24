@@ -1,13 +1,13 @@
 <li class="field-group">
-    <label class="form-label" for="">نموذج أ :</label>
+    <label class="form-label" for="">نموذج أ (يمين):</label>
     <div style="float: right;">
             <input type="text" autocomplete="off" data-items="6" data-provide="typeahead" name="question" placeholder="" class="input-medium template1" data-original-title=""/>
         </div>
 </li>
 
-<li class="field-group">        
+<li class="field-group" style="clear: none;">        
     
-        <label class="form-label" for="">نموذج ب :</label>
+        <label class="form-label" for="">نموذج  ب (يسار) :</label>
         <div style="float: right;">
             <input type="text" autocomplete="off" data-items="6" data-provide="typeahead" name="answer_text" placeholder="" class="input-medium template2" data-original-title=""/>
         </div>            

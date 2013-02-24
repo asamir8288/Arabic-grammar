@@ -28,8 +28,9 @@ class MenuTable extends Doctrine_Table
     
     public static function getSubMenuItems($menu_id){
         return Doctrine_Query::create()
-                ->select('m.*')
-                ->from('Menu m')
+                ->select('m.*, a.id, 
+                    (SELECT COUNT(q.id) FROM Questions q WHERE q.assessment_id=a.id AND q.deleted=0) AS question_count')
+                ->from('Menu m, m.Assessments a')
                 ->where('m.related_to=?', $menu_id)
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->execute();

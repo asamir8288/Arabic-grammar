@@ -10,7 +10,7 @@
 
 <div id="assessment-list"> 
     <input type="hidden" name="assessment_count" id="assessment_count" value="<?php echo count($userAssessment);?>" />
-    <h1>الاختبارات المختارة</h1>
+    <h1>التدريبات المختارة</h1>
     <?php
     if (count($userAssessment)) {
         foreach ($userAssessment as $assessment) {
@@ -18,7 +18,7 @@
         }
     }
         ?>
-        <span class="no-assessment">لا يوجد اختبارات مختارة</span>
+    <span class="no-assessment">لا يوجد تدريبات مختارة</span>
 
         <a href="<?php echo site_url('assessment/my_assessments');?>" class="start-trainings"></a>
 </div>

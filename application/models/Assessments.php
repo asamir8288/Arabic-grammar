@@ -21,7 +21,6 @@ class Assessments extends BaseAssessments {
         $a = new Assessments();
         $a->menu_id = $data['menu_id'];
         $a->name = $data['name'];
-        $a->assessment_time = $data['assessment_time'];
         $a->description = $data['description'];
         $a->created_at = date('ymdHis');
         $a->published = $published;

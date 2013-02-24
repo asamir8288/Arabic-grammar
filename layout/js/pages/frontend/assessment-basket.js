@@ -27,10 +27,11 @@ $(document).ready(function(){
                         $('.start-trainings').before('<div class="assessment-name-box">'+ current.html() +'</div>');
                     }else{
                         if(result == 'still_running'){
-                            // TODO
+                        // TODO
                         }else{
-                            $('.no-assessment').html('<div>هذا الامتحان غير فعال الان</div>');
-                            $('.no-assessment').show();
+                            $('.no-assessment').html('<div style="background-color: #FF0000;padding: 5px;color: #FFF;">هذا التدريب غير فعال الان</div>');
+//                            $('.no-assessment').show();
+                            $('.no-assessment').fadeIn('slow').delay(2000).fadeOut('slow');
                         }
                         
                     }

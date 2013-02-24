@@ -26,6 +26,7 @@ class Assessment extends CI_Controller {
         $this->data['userAssessment'] = UserAssessmentsTable::getAllUserAssessments($this->user_info['user_id'], true);
 
         $this->template->add_js('layout/js/site_url_global.js');
+//        $this->template->add_js('layout/js/jquery.timer.js');
         $this->template->add_js('layout/js/pages/frontend/assessment-basket.js');
         $this->template->write_view('content', 'frontend/assessments/listall-assessments', $this->data);
         $this->template->render();
@@ -50,7 +51,7 @@ class Assessment extends CI_Controller {
             $assessment['assessment_type'] = $assessment_type;
 
             $ua = new UserAssessments();
-            if(!$ua->isAssessmentAddedAndAvailable(4, $assessment_id)){
+            if(!$ua->isAssessmentAddedAndAvailable($assessment['user_id'], $assessment_id)){
                 $ua->addAssessmentToUser($assessment);
             
                 $valid_assessment = true;
