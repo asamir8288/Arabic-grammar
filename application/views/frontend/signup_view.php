@@ -34,7 +34,7 @@
         <input type="text" name="specialization">
     </li>
     <li class="btns">
-        <?php echo form_submit('submit', 'إنشاء حساب جديد', 'class="download-itunes"') ?>
+        <?php echo form_submit('submit', 'إنشاء حساب جديد', 'class="submit-btn"') ?>
     </li>
 </ul>
 <?php echo form_close(); ?>

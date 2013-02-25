@@ -21,7 +21,7 @@ class ACL {
                 redirect('dashboard');
             }
         }else{
-            if(!$_POST && $CI->uri->segment(1) != ''){
+            if(!$_POST && $CI->uri->segment(1) != '' && $CI->uri->segment(1) != 'signup'){
                 redirect('/');
             }
         }
