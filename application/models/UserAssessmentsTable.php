@@ -28,6 +28,7 @@ class UserAssessmentsTable extends Doctrine_Table {
         $q = $q->andWhere('a.published=1')
                 ->andWhere('ua.userid=?', $user_id)
                 ->andWhere('ua.assessment_type=?', $type)
+                ->orderBy('ua.created_at ASC')
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->execute();
         return $q;

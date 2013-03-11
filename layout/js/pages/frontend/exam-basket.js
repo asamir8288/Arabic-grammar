@@ -1,9 +1,9 @@
 $(document).ready(function(){
     if($('#assessment_count').val() > 0){
-        $('.start-trainings').show();
+        $('.start-exams').show();
         $('.no-assessment').hide();
     }else{
-        $('.start-trainings').hide();
+        $('.start-exams').hide();
         $('.no-assessment').show();
     }
     
@@ -20,11 +20,11 @@ $(document).ready(function(){
                 $.get(site_url() + 'assessment/add_to_user/' + menu_id + '/1', function(result){
                     if(result == true){
                         if($('#assessment-list').length > 0){
-                            $('.start-trainings').show();
+                            $('.start-exams').show();
                         }
                         current.addClass('assessment-active');
                         $('.no-assessment').remove();
-                        $('.start-trainings').before('<div class="assessment-name-box">'+ current.html() +'</div>');
+                        $('.start-exams').before('<div class="assessment-name-box">'+ current.html() +'</div>');
                     }else{
                         if(result == 'still_running'){
                         // TODO

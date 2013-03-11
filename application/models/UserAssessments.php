@@ -26,7 +26,6 @@ class UserAssessments extends BaseUserAssessments {
                 ->select('COUNT(ua.id) as available_assessment')
                 ->from('UserAssessments ua, ua.Assessments a')
                 ->where('ua.deleted=0')
-                ->andWhere('a.completed=0')
                 ->andWhere('ua.completed=0')
                 ->andWhere('ua.assessment_type=?', $assessment_type)
                 ->andWhere('ua.userid=?', $user_id)
