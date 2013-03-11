@@ -51,7 +51,7 @@ class Assessment extends CI_Controller {
             $assessment['assessment_type'] = $assessment_type;
 
             $ua = new UserAssessments();
-            if(!$ua->isAssessmentAddedAndAvailable($assessment['user_id'], $assessment_id)){
+            if(!$ua->isAssessmentAddedAndAvailable($assessment['user_id'], $assessment_id, $assessment_type)){
                 $ua->addAssessmentToUser($assessment);
             
                 $valid_assessment = true;

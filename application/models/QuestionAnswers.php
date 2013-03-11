@@ -22,4 +22,20 @@ class QuestionAnswers extends BaseQuestionAnswers
         $qa->created_at = date('ymdHis');
         $qa->save();
     }
+    
+    public function isCorrectAnswer($qId, $answer){
+        $q = Doctrine_Query::create()
+                ->select('COUNT(qa.id) as is_correct')
+                ->from('QuestionAnswers qa')
+                ->where('qa.question_id =?', $qId)
+                ->andWhere('qa.correct_answer =?', trim($answer))
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->fetchOne();
+        
+        if($q['is_correct'] > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

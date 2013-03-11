@@ -67,6 +67,7 @@ class Assessments extends BaseAssessments {
                 ->select('a.id')
                 ->from('Assessments a')
                 ->where('a.menu_id=?', $menu_id)
+                ->andWhere('a.deleted=0')
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->fetchOne();
 

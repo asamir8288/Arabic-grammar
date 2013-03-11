@@ -47,12 +47,13 @@ class QuestionsTable extends Doctrine_Table {
                         ->execute();
     }
 
-    public static function getAssessmentQuestion($assessment_id, $question_id = '') {
+    public static function getAssessmentQuestion($assessment_id, $question_id = '', $assessment_type = 2) {
         $q = Doctrine_Query::create()
                 ->select('q.*, qt.name, qdl.name, qa.*')
-                ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl, q.QuestionAnswers qa')
+                ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl, q.QuestionAnswers qa, q.Assessments a, a.UserAssessments ua')
                 ->where('q.assessment_id=?', $assessment_id)
-                ->andWhere('q.deleted=0');
+                ->andWhere('q.deleted=0')
+                ->andWhere('ua.assessment_type=?', $assessment_type);
         if ($question_id) {
             $q = $q->andWhere('q.id > ?', $question_id);
         }
@@ -65,6 +66,30 @@ class QuestionsTable extends Doctrine_Table {
             $ua = new UserAssessments();
             $ua->decreaseAssessmentQuestionsNumber($assessment_id);
         }
+
+        if (count($q) == 0) {
+            return false;
+        } else {
+            return $q;
+        }
+    }
+
+    public static function getRandAssessmentQuestion($assessment_id, $assessment_type = 1) {
+        $q = Doctrine_Query::create()
+                ->select('q.*, qt.name, qdl.name, qa.*, a.id, ua.id')
+                ->from('Questions q, q.QuestionTypes qt, q.QuestionAnswers qa, q.Assessments a, a.UserAssessments ua')
+                ->where('q.assessment_id=?', $assessment_id)
+                ->andWhere('q.deleted=0')
+                ->andWhere('ua.assessment_type=?', $assessment_type)
+                ->andWhere('q.id NOT IN (SELECT uaa.questions_id FROM UserAssessmentAnswers uaa WHERE uaa.user_assessment_id =ua.id)')
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->limit(1)
+                ->orderBy('RAND()')
+                ->fetchOne();
+
+
+        $ua = new UserAssessments();
+        $ua->decreaseAssessmentQuestionsNumber($assessment_id);
 
         if (count($q) == 0) {
             return false;

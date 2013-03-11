@@ -1,6 +1,6 @@
 <div style="margin-top: 20px;">
     <div class="btn-box">
-        <a href="" class="btn exams-btn"></a>
+        <a href="<?php echo site_url('exam/listall');?>" class="btn exams-btn"></a>
         <div>لها مدة زمنية محددة</div>
         <div>يتم احتساب درجات في نهاية كل اختبار</div>
     </div>

@@ -9,9 +9,11 @@ Doctrine_Manager::getInstance()->bindComponent('UserAssessmentAnswers', 'default
  * 
  * @property integer $id
  * @property integer $user_assessment_id
- * @property integer $user_answer
+ * @property integer $questions_id
+ * @property string $user_answer
  * @property integer $correct_answer
  * @property UserAssessments $UserAssessments
+ * @property Questions $Questions
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -40,21 +42,31 @@ abstract class BaseUserAssessmentAnswers extends Doctrine_Record
              'notnull' => false,
              'autoincrement' => false,
              ));
-        $this->hasColumn('user_answer', 'integer', 4, array(
+        $this->hasColumn('questions_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => 4,
+             'fixed' => false,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             ));
+        $this->hasColumn('user_answer', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
              'fixed' => false,
              'unsigned' => false,
              'primary' => false,
              'notnull' => false,
              'autoincrement' => false,
              ));
-        $this->hasColumn('correct_answer', 'integer', 4, array(
+        $this->hasColumn('correct_answer', 'integer', 1, array(
              'type' => 'integer',
-             'length' => 4,
+             'length' => 1,
              'fixed' => false,
              'unsigned' => false,
              'primary' => false,
+             'default' => '0',
              'notnull' => false,
              'autoincrement' => false,
              ));
@@ -65,6 +77,10 @@ abstract class BaseUserAssessmentAnswers extends Doctrine_Record
         parent::setUp();
         $this->hasOne('UserAssessments', array(
              'local' => 'user_assessment_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Questions', array(
+             'local' => 'questions_id',
              'foreign' => 'id'));
     }
 }

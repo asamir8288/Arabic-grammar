@@ -10,7 +10,22 @@
 
 <div id="assessment-list"> 
     <input type="hidden" name="assessment_count" id="assessment_count" value="<?php echo count($userAssessment);?>" />
-    <h1>التدريبات المختارة</h1>
+    
+    <?php 
+    $assessment_type = 'التدريبات المختارة';
+    $assessment_type_msg = 'لا يوجد تدريبات مختارة';
+    $assessment_type_class = 'start-trainings';
+    $assessment_type_url = 'assessment/my_assessments';
+    
+        if(isset($type) && $type == '1'){
+            $assessment_type = 'الاختبارات المختارة';
+            $assessment_type_msg = 'لا يوجد اختبارات مختارة';
+            $assessment_type_class = 'start-exams';
+            $assessment_type_url = 'exam/my_exams';
+        }
+    ?>
+    
+    <h1><?php echo $assessment_type;?></h1>
     <?php
     if (count($userAssessment)) {
         foreach ($userAssessment as $assessment) {
@@ -18,7 +33,7 @@
         }
     }
         ?>
-    <span class="no-assessment">لا يوجد تدريبات مختارة</span>
+    <span class="no-assessment"><?php echo $assessment_type_msg;?></span>
 
-        <a href="<?php echo site_url('assessment/my_assessments');?>" class="start-trainings"></a>
+        <a href="<?php echo site_url($assessment_type_url);?>" class="<?php echo $assessment_type_class;?>"></a>
 </div>

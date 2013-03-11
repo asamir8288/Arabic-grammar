@@ -12,5 +12,12 @@
  */
 class UserAssessmentAnswers extends BaseUserAssessmentAnswers
 {
-
+    public function addUserAnswer(array $data){
+        $aa = new UserAssessmentAnswers();
+        $aa->user_assessment_id = $data['user_assessment_id'];
+        $aa->questions_id = $data['questions_id'];
+        $aa->user_answer = $data['user_answer'];
+        $aa->correct_answer = $data['correct_answer'];
+        $aa->save();
+    }
 }

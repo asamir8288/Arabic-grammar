@@ -20,6 +20,7 @@ Doctrine_Manager::getInstance()->bindComponent('Questions', 'default');
  * @property DifficultyLevels $DifficultyLevels
  * @property QuestionTypes $QuestionTypes
  * @property Doctrine_Collection $QuestionAnswers
+ * @property Doctrine_Collection $UserAssessmentAnswers
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -131,5 +132,9 @@ abstract class BaseQuestions extends Doctrine_Record
         $this->hasMany('QuestionAnswers', array(
              'local' => 'id',
              'foreign' => 'question_id'));
+
+        $this->hasMany('UserAssessmentAnswers', array(
+             'local' => 'id',
+             'foreign' => 'questions_id'));
     }
 }

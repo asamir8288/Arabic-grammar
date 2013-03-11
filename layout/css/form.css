@@ -367,13 +367,28 @@ select.custom-select:focus{
     cursor: pointer;
 }
 
+.start-current-exam{
+    background: none;
+    border: none;
+    background-image: URL(../images/start_current-exam.png);
+    background-repeat: no-repeat;
+    width: 177px;
+    height: 55px;
+    display: block;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
 .next{
+    background: none;
+    border: none;
     background-image: URL(../images/next-btn.png);
     background-repeat: no-repeat;
     width: 173px;
     height: 55px;
     display: block;
     margin-top: 40px;
+    cursor: pointer;
 }
 
 h1{

@@ -73,6 +73,16 @@ h2{
     cursor: pointer;
 }
 
+.ocq_exam-inner-list{
+    list-style-type: none;
+    margin-bottom: 7px;
+}
+
+.ocq_exam-inner-list label{    
+    display: inline-block;
+    cursor: pointer;
+}
+
 .ocq-question-answer{
     color: rgb(255, 255, 255);
     font-weight: bold;

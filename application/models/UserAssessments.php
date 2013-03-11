@@ -21,13 +21,14 @@ class UserAssessments extends BaseUserAssessments {
         $ua->save();
     }
 
-    public function isAssessmentAddedAndAvailable($user_id, $assessment_id) {
+    public function isAssessmentAddedAndAvailable($user_id, $assessment_id, $assessment_type) {
         $q = Doctrine_Query::create()
                 ->select('COUNT(ua.id) as available_assessment')
-                ->from('UserAssessments ua')
+                ->from('UserAssessments ua, ua.Assessments a')
                 ->where('ua.deleted=0')
+                ->andWhere('a.completed=0')
                 ->andWhere('ua.completed=0')
-                ->andWhere('ua.assessment_type=2')
+                ->andWhere('ua.assessment_type=?', $assessment_type)
                 ->andWhere('ua.userid=?', $user_id)
                 ->andWhere('ua.assessment_id=?', $assessment_id)
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
@@ -48,24 +49,24 @@ class UserAssessments extends BaseUserAssessments {
                 ->execute();
     }
 
-    public function setAssessmentAsChosin($assessment_id) {
+    public function setAssessmentAsChosin($assessment_id, $assessment_type = 2) {
         Doctrine_Query::create()
                 ->update('UserAssessments ua')
                 ->set('ua.completed', '?', true)
                 ->where('ua.deleted =0')
                 ->andWhere('ua.completed =0')
-                ->andWhere('ua.assessment_type =2')
+                ->andWhere('ua.assessment_type =?', $assessment_type)
                 ->andWhere('ua.assessment_id =?', $assessment_id)
                 ->execute();
     }
 
-    public function getAssessmentQesutionNumber($assessment_id) {
+    public function getAssessmentQesutionNumber($assessment_id, $type = 2) {
         $q = Doctrine_Query::create()
                 ->select('ua.questions_number')
                 ->from('UserAssessments ua')
                 ->where('ua.assessment_id =?', $assessment_id)
                 ->andWhere('ua.completed =0')
-                ->andWhere('ua.assessment_type =2')
+                ->andWhere('ua.assessment_type =?', $type)
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->fetchOne();
 
