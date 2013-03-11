@@ -29,11 +29,11 @@
     <?php
     if (count($userAssessment)) {
         foreach ($userAssessment as $assessment) {
-            echo '<div class="assessment-name-box">' . $assessment['Assessments']['name'] . '</div>';
+            echo '<div class="assessment-name-box">' . $assessment['Assessments']['name'] . '</div>';            
         }
     }
         ?>
     <span class="no-assessment"><?php echo $assessment_type_msg;?></span>
 
-        <a href="<?php echo site_url($assessment_type_url);?>" class="<?php echo $assessment_type_class;?>"></a>
+        <a href="<?php echo site_url($assessment_type_url);?>" class="<?php echo $assessment_type_class;?>"></a>       
 </div>

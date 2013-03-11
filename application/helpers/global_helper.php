@@ -33,4 +33,11 @@ function shuffle_assoc($list) {
   return $random; 
 } 
 
+function calc_score($user_assessment_id){
+    $result = UserAssessmentAnswersTable::getResultAssessmentUserAnswers($user_assessment_id);  
+    
+    $result = round($result['result']/$result['total']*100) . '%';
+    return $result;
+}
+
 ?>

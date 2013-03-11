@@ -18,7 +18,7 @@ class UserAssessmentsTable extends Doctrine_Table {
 
     public static function getAllUserAssessments($user_id, $completed = false, $type = 2) {
         $q = Doctrine_Query::create()
-                ->select('ua.assessment_id, ua.completed, a.name')
+                ->select('ua.id, ua.assessment_id, ua.completed, a.name')
                 ->from('UserAssessments ua, ua.Assessments a')
                 ->where('ua.deleted=0')
                 ->andWhere('a.deleted=0');
