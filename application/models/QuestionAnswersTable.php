@@ -16,4 +16,13 @@ class QuestionAnswersTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('QuestionAnswers');
     }
+    
+    public static function getQuestionAnswers($id){
+        return Doctrine_Query::create()
+                ->select('q.id, q.question, qa.*')
+                ->from('Questions q, q.QuestionAnswers qa')
+                ->where('q.id=?', $id)
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->fetchOne();
+    }
 }

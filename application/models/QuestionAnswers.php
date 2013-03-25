@@ -23,6 +23,17 @@ class QuestionAnswers extends BaseQuestionAnswers
         $qa->save();
     }
     
+    public function updateQuestionAnswer(array $data){
+        Doctrine_Query::create()
+                ->update('QuestionAnswers qa')
+                ->set('qa.answer_text', '?', $data['answer_text'])
+                ->set('qa.correct_answer', '?', $data['correct_answer'])
+                ->set('qa.feedback', '?', $data['feedback'])
+                ->set('qa.interest_grammatical', '?', $data['interest_grammatical'])
+                ->where('qa.id =?', $data['answer_id'])
+                ->execute();
+    }
+    
     public function isCorrectAnswer($qId, $answer){
         $q = Doctrine_Query::create()
                 ->select('COUNT(qa.id) as is_correct')

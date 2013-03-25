@@ -1,3 +1,4 @@
+<input type="hidden" name="answer_id" value="<?php echo (isset($answers)) ? trim($answers['QuestionAnswers'][0]['id']) : '';?>" />
 <li class="field-group">
     <label class="form-label" for="">نموذج أ (يمين):</label>
     <div style="float: right;">
@@ -14,9 +15,29 @@
     
 </li>
 
+<?
+$template1_tags = '';
+if (isset($answers)) {
+    $template1 = explode(',', $answers['question']);
+
+    for ($i = 0; $i < count($template1); $i++) {
+        $template1_tags .= '"' . $template1[$i] . '", ';
+    }
+}
+
+$template2_tags = '';
+if (isset($answers)) {
+    $template2 = explode(',', $answers['QuestionAnswers'][0]['answer_text']);
+
+    for ($i = 0; $i < count($template2); $i++) {
+        $template2_tags .= '"' . $template2[$i] . '", ';
+    }
+}
+?>
+
 <script type="text/javascript">               
     jQuery(".template1:eq(0)").tagsManager({
-        prefilled: [""],
+        prefilled: [<?php echo $template1_tags;?>],
         preventSubmitOnEnter: true,
         typeahead: true,
         typeaheadAjaxSource: null,                    
@@ -25,7 +46,7 @@
         hiddenTagListName: 'question'
     });                
     jQuery(".template2:eq(0)").tagsManager({
-        prefilled: [""],
+        prefilled: [<?php echo $template2_tags;?>],
         preventSubmitOnEnter: true,
         typeahead: true,
         typeaheadAjaxSource: null,                    

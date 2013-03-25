@@ -97,5 +97,14 @@ class QuestionsTable extends Doctrine_Table {
             return $q;
         }
     }
+    
+    public static function getQuestion($id){
+        return Doctrine_Query::create()
+                ->select('q.*, qt.*, qa.feedback, qa.interest_grammatical, qdl.*')
+                ->from('Questions q, q.QuestionTypes qt, q.QuestionAnswers qa, q.DifficultyLevels qdl')
+                ->where('q.id=?', $id)
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->fetchOne();
+    }
 
 }

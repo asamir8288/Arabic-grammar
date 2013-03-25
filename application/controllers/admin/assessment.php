@@ -82,7 +82,7 @@ class Assessment extends CI_Controller {
     
     public function create_question($assessment_id){
         if($this->input->post('submit')){
-            $posted_data = $_POST;
+            $posted_data = $_POST;            
             
             $q = new Questions();
             
@@ -121,15 +121,62 @@ class Assessment extends CI_Controller {
         $this->template->render();
     }
     
+    public function edit_question($question_id){
+        if($this->input->post('submit')){
+            $posted_data = $_POST;            
+            
+            $q = new Questions();
+            
+            switch($this->input->post('type_id')){
+                case '1':
+                    $answers = explode(',', $posted_data['answer_text']);
+                    $posted_data['correct_answer'] = $answers[0];
+                                        
+                    $q->updateQuestion($posted_data);                    
+                    redirect(site_url('admin/assessment/manage_questions/' . $posted_data['ass_id']));
+                    
+                    break;
+                case '2':
+                    break;
+                case '3':                    
+                    $q->updateQuestion($posted_data, 3);                    
+                    redirect(site_url('admin/assessment/manage_questions/' . $posted_data['ass_id']));
+                    
+                    break;
+                case '4':
+                    break;
+            }
+        }
+        if($question_id){
+            $this->data['question'] = QuestionsTable::getQuestion($question_id);
+        }
+        $this->data['submit_url'] = site_url('admin/assessment/edit_question/' . $question_id);
+        $this->data['questionTypes'] = QuestionTypesTable::getAllQuestionTypes();
+        $this->data['questionDiffeculty'] = DifficultyLevelsTable::getAllDifficultyLevels();
+        
+        $this->template->add_css('layout/css/bootstrap-tagmanager.css');
+        $this->template->add_js('layout/js/jquery-ui.min.js');
+        $this->template->add_js('layout/js/bootstrap-tagmanager.js');
+        
+        $this->template->write_view('content', 'backend/assessments/create_question', $this->data);
+        $this->template->render();
+    }
+    
     /*
      * Question Types
      */
-    public function multiChoices(){
-        $this->load->view('backend/assessments/question_types/multi_choices');
+    public function multiChoices($question_id = ''){
+        if($question_id){
+            $this->data['answers'] = QuestionAnswersTable::getQuestionAnswers($question_id);
+        }
+        $this->load->view('backend/assessments/question_types/multi_choices', $this->data);
     }
     
-    public function dragAndDrop(){
-        $this->load->view('backend/assessments/question_types/drag_and_drop');
+    public function dragAndDrop($question_id = ''){
+        if($question_id){
+            $this->data['answers'] = QuestionAnswersTable::getQuestionAnswers($question_id);
+        }
+        $this->load->view('backend/assessments/question_types/drag_and_drop', $this->data);
     }
     
     public function delete_question($question_id, $assessment_id){

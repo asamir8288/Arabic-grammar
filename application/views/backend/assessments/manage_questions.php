@@ -13,12 +13,13 @@
             <th>هل السؤال مفعل؟</th>
             <th>تاريخ الانشاء</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($questions as $question) { ?>
             <tr>
-                <td><a title="<?php echo $question['question'];?>" href="#"><?php echo (strlen($question['question'])>100) ? substr($question['question'], 0, 100) : $question['question']; ?></a></td>
+                <td><a title="<?php echo $question['question'];?>" href="<?php echo site_url('admin/assessment/edit_question/' . $question['id']);?>"><?php echo (strlen($question['question'])>100) ? substr($question['question'], 0, 100) : $question['question']; ?></a></td>
                 <td><?php echo $question['QuestionTypes']['name']; ?></td>
                 <td><?php echo $question['DifficultyLevels']['name']; ?></td>
                 <td>
@@ -35,6 +36,7 @@
                     ?>
                 </td>
                 <td><?php echo date('d-m-Y', strtotime($question['created_at'])); ?></td>
+                <td><?php echo anchor(site_url('admin/assessment/edit_question/' . $question['id'] . '/'. $assessment_id), 'تعديل'); ?></td>                
                 <td><?php echo anchor(site_url('admin/assessment/delete_question/' . $question['id'] . '/'. $assessment_id), 'حذف'); ?></td>                
             </tr>
         <?php } ?>

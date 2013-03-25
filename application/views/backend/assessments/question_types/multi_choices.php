@@ -1,6 +1,7 @@
+<input type="hidden" name="answer_id" value="<?php echo (isset($answers)) ? trim($answers['QuestionAnswers'][0]['id']) : '';?>" />
 <li class="field-group">
     <label class="form-label" for="">السؤال :</label>
-    <textarea type="text" name="question" id="question" ></textarea>
+    <textarea type="text" name="question" id="question" ><?php echo (isset($answers)) ? trim($answers['question']) : '';?></textarea>
 </li>
 
 <li class="field-group">        
@@ -9,15 +10,26 @@
         <div style="float: right;">
             <input type="text" autocomplete="off" data-items="6" data-provide="typeahead" name="answer_text" placeholder="" class="input-medium tagManager" data-original-title=""/>
         </div>  
-        <span style="position: relative;top: 7px;right: 5px;color: rgb(243, 151, 12);">
+        <span style="float:right;position: relative;top: 7px;right: 5px;color: rgb(243, 151, 12);">
             رجاء إدخال الإجابة الصحيحة كأول اختيار
         </span>
     
 </li>
 
+<?
+$answers_tags = '';
+if (isset($answers)) {
+    $answer = explode(',', $answers['QuestionAnswers'][0]['answer_text']);
+
+    for ($i = 0; $i < count($answer); $i++) {
+        $answers_tags .= '"' . $answer[$i] . '", ';
+    }
+}
+?>
+
 <script type="text/javascript">               
     jQuery(".tagManager:eq(0)").tagsManager({
-        prefilled: [""],
+        prefilled: [<?php echo $answers_tags;?>],
         preventSubmitOnEnter: true,
         typeahead: true,
         typeaheadAjaxSource: null,                    
