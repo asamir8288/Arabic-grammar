@@ -6,6 +6,8 @@
             $this->load->view('frontend/assessments/question_types/exam_multi_choices', $data);
             break;
         case '2':
+            $data['q'] = $assessmentQuestions;
+            $this->load->view('frontend/assessments/question_types/exam_press_on_correct_answer', $data);
             break;
         case '3':
             $data['q'] = $assessmentQuestions;

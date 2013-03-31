@@ -68,7 +68,7 @@ class Exam extends CI_Controller {
             $user_assessment_id = $this->input->post('ua_id');
             
             $qa = new QuestionAnswers();
-            $answer = $qa->isCorrectAnswer($question_id, $user_answer);
+            $answer = $qa->isCorrectAnswer($question_id, $user_answer);            
             
             $userAnswer = array();
             $userAnswer['user_assessment_id'] = $user_assessment_id;
@@ -92,12 +92,25 @@ class Exam extends CI_Controller {
             $ua->setAssessmentAsChosin($assessment_id, 1);
             redirect(site_url('exam/my_exams'));
         }
+        
+        switch ($this->data['assessmentQuestions']['type_id']) {
+            case '1':
+                $this->template->add_css('layout/css/question_types/ocq.css');
+                $this->template->add_js('layout/js/ocq-exam.js');
+                break;
+            case '2':
+                $this->template->add_css('layout/css/question_types/choose_each_answer.css');
+                $this->template->add_js('layout/js/choose-each-answer-exam.js');
+                break;
+            case '3':
+                $this->template->add_css('layout/css/question_types/drag_drop.css');
+                $this->template->add_js('layout/js/jquery.dragsort-0.5.1.min.js');
+                $this->template->add_js('layout/js/exam_dragndrop.js');
+                break;
+            case '4':
+                break;
+        }
 
-        $this->template->add_css('layout/css/question_types/ocq.css');
-        $this->template->add_css('layout/css/question_types/drag_drop.css');
-        $this->template->add_js('layout/js/ocq-exam.js');
-        $this->template->add_js('layout/js/jquery.dragsort-0.5.1.min.js');
-        $this->template->add_js('layout/js/exam_dragndrop.js');
         $this->template->write_view('content', 'frontend/assessments/question_exam_view', $this->data);
         $this->template->render();
     }

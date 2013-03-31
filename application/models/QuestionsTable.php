@@ -53,6 +53,7 @@ class QuestionsTable extends Doctrine_Table {
                 ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl, q.QuestionAnswers qa, q.Assessments a, a.UserAssessments ua')
                 ->where('q.assessment_id=?', $assessment_id)
                 ->andWhere('q.deleted=0')
+                ->andWhere('q.completed=0')
                 ->andWhere('ua.assessment_type=?', $assessment_type);
         if ($question_id) {
             $q = $q->andWhere('q.id > ?', $question_id);
@@ -78,8 +79,9 @@ class QuestionsTable extends Doctrine_Table {
         $q = Doctrine_Query::create()
                 ->select('q.*, qt.name, qdl.name, qa.*, a.id, ua.id')
                 ->from('Questions q, q.QuestionTypes qt, q.QuestionAnswers qa, q.Assessments a, a.UserAssessments ua')
-                ->where('q.assessment_id=?', $assessment_id)
-                ->andWhere('q.deleted=0')
+                ->where('ua.assessment_id=?', $assessment_id)
+                ->andWhere('ua.deleted=0')
+                ->andWhere('ua.completed=0')
                 ->andWhere('ua.assessment_type=?', $assessment_type)
                 ->andWhere('q.id NOT IN (SELECT uaa.questions_id FROM UserAssessmentAnswers uaa WHERE uaa.user_assessment_id =ua.id)')
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)

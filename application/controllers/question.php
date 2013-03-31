@@ -40,7 +40,7 @@ class Question extends CI_Controller {
                 break;
             case '2':
                 $this->template->add_css('layout/css/question_types/choose_each_answer.css');
-                $this->template->add_js('layout/js/choose-each-answer.js');
+                $this->template->add_js('layout/js/choose-each-answer-exam.js');
                 break;
             case '3':
                 $this->template->add_css('layout/css/question_types/drag_drop.css');

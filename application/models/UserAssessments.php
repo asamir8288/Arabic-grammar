@@ -54,6 +54,7 @@ class UserAssessments extends BaseUserAssessments {
                 ->set('ua.completed', '?', true)
                 ->where('ua.deleted =0')
                 ->andWhere('ua.completed =0')
+                ->andWhere('ua.completed_at =?', date('ymdHis'))
                 ->andWhere('ua.assessment_type =?', $assessment_type)
                 ->andWhere('ua.assessment_id =?', $assessment_id)
                 ->execute();
