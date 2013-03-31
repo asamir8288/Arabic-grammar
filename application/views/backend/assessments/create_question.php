@@ -13,7 +13,9 @@
                     });
                     break;
                 case '2':
-                    alert('2');
+                    $.get(site_url() + 'admin/assessment/pressOnCorrectAnswer', function(data){
+                        $('#question_type').html(data);
+                    });                    
                     break;
                 case '3':
                     $.get(site_url() + 'admin/assessment/dragAndDrop', function(data){
@@ -36,7 +38,9 @@
                     });
                     break;
                 case '2':
-                    alert('2');
+                    $.get(site_url() + 'admin/assessment/pressOnCorrectAnswer/' + question_id, function(data){
+                        $('#question_type').html(data);
+                    }); 
                     break;
                 case '3':
                     $.get(site_url() + 'admin/assessment/dragAndDrop/' + question_id, function(data){

@@ -97,6 +97,10 @@ class Assessment extends CI_Controller {
                     
                     break;
                 case '2':
+                    $posted_data['assessment_id'] = $assessment_id;
+                    
+                    $q->addPressOnCorrectAnswerQuestion($posted_data);                    
+                    redirect(site_url('admin/assessment/manage_questions/' . $assessment_id));
                     break;
                 case '3':
                     $posted_data['assessment_id'] = $assessment_id;
@@ -137,6 +141,8 @@ class Assessment extends CI_Controller {
                     
                     break;
                 case '2':
+                    $q->updateQuestion($posted_data, 2);                    
+                    redirect(site_url('admin/assessment/manage_questions/' . $posted_data['ass_id']));
                     break;
                 case '3':                    
                     $q->updateQuestion($posted_data, 3);                    
@@ -170,6 +176,13 @@ class Assessment extends CI_Controller {
             $this->data['answers'] = QuestionAnswersTable::getQuestionAnswers($question_id);
         }
         $this->load->view('backend/assessments/question_types/multi_choices', $this->data);
+    }
+    
+     public function pressOnCorrectAnswer($question_id = ''){
+        if($question_id){
+            $this->data['answers'] = QuestionAnswersTable::getQuestionAnswers($question_id);
+        }
+        $this->load->view('backend/assessments/question_types/press_on__correct_answer', $this->data);
     }
     
     public function dragAndDrop($question_id = ''){

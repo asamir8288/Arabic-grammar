@@ -1,0 +1,104 @@
+/*-----------------------------------------------------------------------------------*/
+/* CSS Reset & Clearfix - http://meyerweb.com/eric/tools/css/reset/
+/*-----------------------------------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; } body { line-height: 1; } ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Document Setup
+/*-----------------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Dropdown Questions
+/*-----------------------------------------------------------------------------------*/
+
+h2{
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.choose-each-question-wrapper{
+    padding: 20px 12px 20px 12px;
+    width: 960px;
+    margin: 0 auto;
+    color: #454545;
+
+    padding-bottom: 144px;
+    -webkit-box-shadow: 0 1px 3px #B9BBBE;
+    -moz-box-shadow: 0 1px 3px #b9bbbe;
+    box-shadow: 0 1px 3px #B9BBBE;
+    border: 1px solid #B9BBBE;
+    border-bottom: 1px solid #B2B2B6;
+    border-top: none;
+    background: rgb(252, 252, 252);
+}
+
+.choose-each-question-main-paragraph{
+    width: 517px;
+    line-height: 28px;
+    margin-bottom: 8px;
+}
+
+.normal-span-answer{
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    padding: 0px 4px 0px 4px;
+    height: 24px;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.wrong-span-answer{
+    cursor: default;
+    color: red;
+    border-bottom: 2px solid transparent;
+    padding: 0px 4px 0px 4px;
+    height: 24px;
+    display: inline-block;
+}
+
+.correct-span-answer{
+    cursor: default;
+    color: green;
+    border-bottom: 2px solid transparent;
+    padding: 0px 4px 0px 4px;
+    height: 24px;
+    display: inline-block;
+}
+
+.normal-span-answer:hover{
+    color: blue;
+    border-bottom: 2px solid blue;
+}
+
+.normal-span-answer:active{
+    position: relative;
+    top:2px;
+}
+
+.feedback-on-answer{
+    color: white;
+    display: none;
+    padding: 3px 15px;
+    display: inline-block;
+    float: right;
+    clear: both;
+    margin-bottom: 8px;
+
+}
+
+.wrong-answer-feedback{
+    background: rgb(221, 39, 39);
+}
+
+.correct-answer-feedback{
+    background: #8DC63F;
+}
+
+.next{
+    margin-top: 120px;
+}
