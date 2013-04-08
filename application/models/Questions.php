@@ -51,6 +51,20 @@ class Questions extends BaseQuestions {
         $qa = new QuestionAnswers();
         $qa->addQuestionAnswer($answer);
     }
+    
+    public function addDropdownsQuestion(array $data) {
+        $question_id = $this->addQuestion($data);
+
+        $answer = array();
+        $answer['question_id'] = $question_id;
+        $answer['answer_text'] = $data['answer_text'];
+        $answer['correct_answer'] = $data['answer_text'];
+        $answer['feedback'] = $data['feedback'];
+        $answer['interest_grammatical'] = $data['interest_grammatical'];
+
+        $qa = new QuestionAnswers();
+        $qa->addQuestionAnswer($answer);
+    }
 
     private function addQuestion(array $data) {
         $q = new Questions();
@@ -83,6 +97,7 @@ class Questions extends BaseQuestions {
                 $answer['correct_answer'] = $data['answer_text'];
                 break;
             case '4':
+                $answer['correct_answer'] = $data['answer_text'];
                 break;
         }
         Doctrine_Query::create()

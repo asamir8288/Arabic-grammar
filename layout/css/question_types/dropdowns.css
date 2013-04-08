@@ -1,0 +1,93 @@
+/*-----------------------------------------------------------------------------------*/
+/* CSS Reset & Clearfix - http://meyerweb.com/eric/tools/css/reset/
+/*-----------------------------------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; background: transparent; } body { line-height: 1; } ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Document Setup
+/*-----------------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Dropdown Questions
+/*-----------------------------------------------------------------------------------*/
+
+.dropdown-questions-wrapper{
+    margin-bottom: 80px;
+}
+
+.dropdown-question-main-paragraph{
+    width: 700px;
+    line-height: 28px;
+}
+
+.dropdown-item{
+    width: 71px;
+    padding: 1px 3px 1px 1px;
+    margin-right: 2px;
+    margin-left: 3px;
+    display: none;
+}
+
+.empty-line-item{
+    color: rgb(137, 172, 245);
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px dashed rgb(226, 226, 226);
+    height: 21px;
+    padding: 0 5px;
+    line-height: 16px;
+    display: inline-block;
+}
+
+.empty-line-item:hover{
+    color: orange;
+    border-color: #bbb;
+}
+
+.dropdown-select-wrapper{
+
+}
+
+.correct-item-selected{
+    display: inline-block;
+    color: #454545;
+    font-weight: normal;
+    border: none;
+}
+
+.dropdown-answer{
+    display: inline-block;
+    color: #454545;
+    font-weight: normal;
+    border: none;
+}
+
+.wrong-item-selected{
+    display: inline-block;
+    color: rgb(248, 33, 33);
+    font-weight: normal;
+    border: none;
+}
+
+.feedback-on-answer{
+    color: white;
+    display: none;
+    padding: 3px 15px;
+    display: inline-block;
+    float: right;
+    clear: both;
+    margin-bottom: 8px;
+}
+
+.wrong-answer-feedback{
+    background: rgb(221, 39, 39);
+}
+
+.correct-answer-feedback{
+    background: #8DC63F;
+}

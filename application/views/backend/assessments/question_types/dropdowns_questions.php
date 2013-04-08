@@ -5,7 +5,7 @@
     <textarea type="text" name="question" id="question" ><?php echo (isset($answers)) ? trim($answers['question']) : ''; ?></textarea>
 </li>
 <li class="field-group">        
-    <label class="form-label" for="">الاجابة :</label>
+    <label class="form-label" for="">الاجابات الصحيحة :</label>
     <div style="float: right;">
         <input type="text" autocomplete="off" data-items="6" data-provide="typeahead" name="answer_text" placeholder="" class="input-medium tagManager" data-original-title=""/>
     </div>    

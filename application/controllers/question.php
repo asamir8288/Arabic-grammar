@@ -48,6 +48,8 @@ class Question extends CI_Controller {
                 $this->template->add_js('layout/js/dragndrop.js');
                 break;
             case '4':
+                $this->template->add_css('layout/css/question_types/dropdowns.css');
+                $this->template->add_js('layout/js/dropdown-question.js');
                 break;
         }
 

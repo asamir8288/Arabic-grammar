@@ -53,7 +53,7 @@ class QuestionsTable extends Doctrine_Table {
                 ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl, q.QuestionAnswers qa, q.Assessments a, a.UserAssessments ua')
                 ->where('q.assessment_id=?', $assessment_id)
                 ->andWhere('q.deleted=0')
-                ->andWhere('q.completed=0')
+                ->andWhere('ua.completed=0')
                 ->andWhere('ua.assessment_type=?', $assessment_type);
         if ($question_id) {
             $q = $q->andWhere('q.id > ?', $question_id);

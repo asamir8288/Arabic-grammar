@@ -110,6 +110,10 @@ class Assessment extends CI_Controller {
                     
                     break;
                 case '4':
+                    $posted_data['assessment_id'] = $assessment_id;
+                    
+                    $q->addDropdownsQuestion($posted_data);                    
+                    redirect(site_url('admin/assessment/manage_questions/' . $assessment_id));
                     break;
             }
         }
@@ -150,6 +154,8 @@ class Assessment extends CI_Controller {
                     
                     break;
                 case '4':
+                    $q->updateQuestion($posted_data, 4);                    
+                    redirect(site_url('admin/assessment/manage_questions/' . $posted_data['ass_id']));
                     break;
             }
         }
@@ -190,6 +196,13 @@ class Assessment extends CI_Controller {
             $this->data['answers'] = QuestionAnswersTable::getQuestionAnswers($question_id);
         }
         $this->load->view('backend/assessments/question_types/drag_and_drop', $this->data);
+    }
+    
+    public function dropdownsQuestion($question_id = ''){
+        if($question_id){
+            $this->data['answers'] = QuestionAnswersTable::getQuestionAnswers($question_id);
+        }
+        $this->load->view('backend/assessments/question_types/dropdowns_questions', $this->data);
     }
     
     public function delete_question($question_id, $assessment_id){

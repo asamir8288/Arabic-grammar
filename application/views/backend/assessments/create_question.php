@@ -23,7 +23,9 @@
                     });
                     break;
                 case '4':
-                    alert('4');
+                    $.get(site_url() + 'admin/assessment/dropdownsQuestion', function(data){
+                        $('#question_type').html(data);
+                    });
                     break;
             }
         });
@@ -48,7 +50,9 @@
                     });
                     break;
                 case '4':
-                    alert('4');
+                    $.get(site_url() + 'admin/assessment/dropdownsQuestion/' + question_id, function(data){
+                        $('#question_type').html(data);
+                    });
                     break;
             }
         }        

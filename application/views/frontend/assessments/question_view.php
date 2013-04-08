@@ -14,6 +14,8 @@
             $this->load->view('frontend/assessments/question_types/drag_and_drop', $data);
             break;
         case '4':
+            $data['q'] = $assessmentQuestions;
+            $this->load->view('frontend/assessments/question_types/dropdowns', $data);
             break;
     }
     ?>

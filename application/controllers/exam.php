@@ -64,7 +64,17 @@ class Exam extends CI_Controller {
     public function question($assessment_id) {
         if($this->input->post('submit')){
             $question_id = $this->input->post('qId');
-            $user_answer = $this->input->post('q1');
+            
+            // here we will get the user answers if the type is 4 or else
+            if($this->input->post('q1')){
+                $user_answer = $this->input->post('q1');
+            }else{
+                $userAnswer = '';
+                for($i=0;$i<count($_POST['answers']);$i++){
+                    $userAnswer .= trim($_POST['answers'][$i]) . ',';
+                }
+                $user_answer = substr($userAnswer,0,-1);
+            }
             $user_assessment_id = $this->input->post('ua_id');
             
             $qa = new QuestionAnswers();
@@ -108,6 +118,8 @@ class Exam extends CI_Controller {
                 $this->template->add_js('layout/js/exam_dragndrop.js');
                 break;
             case '4':
+                $this->template->add_css('layout/css/question_types/dropdowns.css');
+                $this->template->add_js('layout/js/dropdown-question-exam.js');
                 break;
         }
 
