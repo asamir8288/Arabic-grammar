@@ -91,7 +91,7 @@ class QuestionsTable extends Doctrine_Table {
 
 
         $ua = new UserAssessments();
-        $ua->decreaseAssessmentQuestionsNumber($assessment_id);
+        $ua->decreaseAssessmentQuestionsNumber($assessment_id, '1'); // 1 means this is exam not training
 
         if (count($q) == 0) {
             return false;

@@ -62,35 +62,36 @@ class Exam extends CI_Controller {
     }
 
     public function question($assessment_id) {
-        if($this->input->post('submit')){
+        if ($this->input->post('submit')) {
             $question_id = $this->input->post('qId');
-            
+
             // here we will get the user answers if the type is 4 or else
-            if($this->input->post('q1')){
+            if ($this->input->post('q1')) {
                 $user_answer = $this->input->post('q1');
-            }else{
+            } else {
                 $userAnswer = '';
-                for($i=0;$i<count($_POST['answers']);$i++){
+                for ($i = 0; $i < count($_POST['answers']); $i++) {
                     $userAnswer .= trim($_POST['answers'][$i]) . ',';
                 }
-                $user_answer = substr($userAnswer,0,-1);
+                $user_answer = substr($userAnswer, 0, -1);
             }
             $user_assessment_id = $this->input->post('ua_id');
-            
+
             $qa = new QuestionAnswers();
-            $answer = $qa->isCorrectAnswer($question_id, $user_answer);            
-            
+            $answer = $qa->isCorrectAnswer($question_id, $user_answer);
+
             $userAnswer = array();
             $userAnswer['user_assessment_id'] = $user_assessment_id;
             $userAnswer['questions_id'] = $question_id;
             $userAnswer['user_answer'] = $user_answer;
             $userAnswer['correct_answer'] = $answer;
-            
+
             $aa = new UserAssessmentAnswers();
             $aa->addUserAnswer($userAnswer);
             
+            redirect(site_url('exam/question/' . $assessment_id));
         }
-        
+
         $this->data['submit_url'] = site_url('exam/question/' . $assessment_id);
 
         $ua = new UserAssessments();
@@ -102,7 +103,7 @@ class Exam extends CI_Controller {
             $ua->setAssessmentAsChosin($assessment_id, 1);
             redirect(site_url('exam/my_exams'));
         }
-        
+
         switch ($this->data['assessmentQuestions']['type_id']) {
             case '1':
                 $this->template->add_css('layout/css/question_types/ocq.css');

@@ -52,9 +52,9 @@ class UserAssessments extends BaseUserAssessments {
         Doctrine_Query::create()
                 ->update('UserAssessments ua')
                 ->set('ua.completed', '?', true)
+                ->set('ua.completed_at', '?', date('ymdHis'))
                 ->where('ua.deleted =0')
                 ->andWhere('ua.completed =0')
-                ->andWhere('ua.completed_at =?', date('ymdHis'))
                 ->andWhere('ua.assessment_type =?', $assessment_type)
                 ->andWhere('ua.assessment_id =?', $assessment_id)
                 ->execute();
@@ -73,8 +73,8 @@ class UserAssessments extends BaseUserAssessments {
         return $q['questions_number'];
     }
 
-    public function decreaseAssessmentQuestionsNumber($assessment_id) {
-        $number = $this->getAssessmentQesutionNumber($assessment_id);        
+    public function decreaseAssessmentQuestionsNumber($assessment_id, $type='2') {
+        $number = $this->getAssessmentQesutionNumber($assessment_id, $type);        
         $new_number = intval($number - 1);
         
         Doctrine_Query::create()
@@ -82,7 +82,7 @@ class UserAssessments extends BaseUserAssessments {
                 ->set('ua.questions_number', '?', $new_number)
                 ->where('ua.deleted =0')
                 ->andWhere('ua.completed =0')
-                ->andWhere('ua.assessment_type =2')
+                ->andWhere('ua.assessment_type =?', $type)
                 ->andWhere('ua.assessment_id =?', $assessment_id)
                 ->execute();
     }
