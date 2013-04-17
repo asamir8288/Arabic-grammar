@@ -80,8 +80,8 @@ input[type="text"],input[type="email"], input[type="password"], input[type="url"
     font-size: 13px;
     border: 1px solid #e4e4e4;
     padding: 4px 13px 4px 13px;
-/*    float: right;
-    clear: left;*/
+    /*    float: right;
+        clear: left;*/
     width: 220px;
     background-color: #f9f9f9;
     position: relative;
@@ -148,7 +148,7 @@ textarea{
 .select-options-wrapper {
     width: 254px;
     overflow: hidden;
-/*    float: right;*/
+    /*    float: right;*/
     position: relative;
     padding: 0;
     margin-left: 18px;
@@ -298,50 +298,53 @@ select.custom-select:focus{
 .assessment-btn{
     background-image: URL(../images/assessments-btns.png);
     background-repeat: no-repeat;
-    width: 203px;
-    height: 20px;
+    width: 277px;
+    height: 21px;
     display: inline-block;
-    color: #4183ad;
+    color: #1a5377;
     text-decoration: none;
     text-align: center;
-    font-size: 14px;
-    padding: 12px 0px;
+    font-size: 16px;
+    padding: 22px 0px;
     cursor: pointer;
     margin-bottom: 5px;
     float: right;
     margin-left: 5px;    
 }
 .assessment-btn:hover{
-    background-position: -203px 0px;
-    color: #FFF;   
+    background-position: 0px -65px;
+    color: #cccccc;   
     text-decoration: none;
 }
 
 .assessment-active{
     background-image: URL(../images/assessments-btns.png);
     background-repeat: no-repeat;
-    background-position: -203px 0px;
-    width: 204px;
-    height: 20px;
+    background-position: 0px -65px;
+    width: 277px;
+    height: 21px;
     display: inline-block;
-    color: #FFF;
+    color: #cccccc;
     text-decoration: none;
     text-align: center;
-    font-size: 14px;
-    padding: 12px 0px;
+    font-size: 16px;
+    padding: 22px 0px;
     cursor: pointer;
     margin-bottom: 5px;
 }
 
 .btn-with-long-text{
-    padding: 2px 0!important;
-    height: 40px!important;
+    display: block;
+    height: 65px!important;
+    width: 250px;
+    margin: 0 auto;
+    margin-top: -7px;
 }
 
 .start-exams{
     background-image: URL(../images/start-exams.png);
     background-repeat: no-repeat;
-    width: 173px;
+    width: 177px;
     height: 55px;
     display: block;
     margin-top: 40px;
@@ -350,7 +353,7 @@ select.custom-select:focus{
 .start-trainings{
     background-image: URL(../images/start-training.png);
     background-repeat: no-repeat;
-    width: 173px;
+    width: 177px;
     height: 55px;
     display: block;
     margin-top: 40px;
@@ -360,7 +363,7 @@ select.custom-select:focus{
     border: none;
     background-image: URL(../images/start_current-training.png);
     background-repeat: no-repeat;
-    width: 173px;
+    width: 177px;
     height: 55px;
     display: block;
     margin-top: 40px;
@@ -384,7 +387,7 @@ select.custom-select:focus{
     border: none;
     background-image: URL(../images/next-btn.png);
     background-repeat: no-repeat;
-    width: 173px;
+    width: 177px;
     height: 55px;
     display: block;
     margin-top: 40px;

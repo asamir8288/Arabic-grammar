@@ -10,6 +10,7 @@
         
         <script src="<?php echo static_url();?>layout/js/jquery-1.7.2.min.js"></script>
         <script src="<?php echo static_url();?>layout/js/site_url_global.js"></script>
+        <script src="<?php echo static_url();?>layout/js/jquery.validate.min.en"></script>
         <?php echo $_scripts;?>
     </head>
 

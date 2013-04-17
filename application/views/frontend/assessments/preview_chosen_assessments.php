@@ -14,7 +14,7 @@ if (isset($type) && $type == '1') {
 }
 ?>
 
-<div style="width: 600px;">
+<div style="">
     <div style="margin-top: 30px;"></div>
     <h1 style="margin-right: -10px;"><?php echo $assessment_type; ?>: </h1>
     <?php

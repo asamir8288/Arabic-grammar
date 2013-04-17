@@ -354,32 +354,32 @@ a#signup-btn{
 }
 
 #menu_groups{
-    width: 650px;
+    width: 100%;
     float: right;
     display: block;
-    border-left: dashed 1px #CCC;
     margin-top: 30px;
 }
 
 #assessment-list{
-    width: 173px;
+    clear: both;
     float: right;
     margin-top: 30px;
     margin-right: 20px;
 }
 
 .assessment-name-box{
-    background-image: URL(../images/assessment-name.png);
+    background-image: URL(../images/ready_assessment_bg.png);
     background-repeat: no-repeat;
-    width: 173px;
-    height: 15px;
-    display: block;
+    width: 275px;
+    height: 21px;
+    display: inline-block;
     color: #FFF;
     text-decoration: none;
     text-align: center;
-    font-size: 12px;
-    padding: 8px 0px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 22px 0px;
+    margin-bottom: 5px;
+    margin-left: 5px;    
 }
 
 .no-assessment{
@@ -387,6 +387,7 @@ a#signup-btn{
     font-size: 12px;
     display: block;
     text-align: center;
+    width: 275px;
 }
 
 .assessment-menu-separator{
@@ -399,46 +400,50 @@ a#signup-btn{
     top: 30px;
 }
 
-.assessment-item-separator{
-    background-image: URL(../images/assessment-item-separator.png);
-    background-repeat: no-repeat;
-    width: 630px;
-    min-height: 54px;
+.assessment-item-separator{   
+    width: 100%;
     display: block;
-    padding-top: 20px; 
-    padding-right: 8px; 
-    margin-top: 10px;
+    padding-top: 13px;
     clear: right;
 }
 
+.assessment-section-separator{
+    clear: right;
+    border-bottom: 1px #cccccc dashed;
+    height: 1px;
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
 .assessment-name-box-inside{
-    background-image: URL(../images/assessment-name.png);
+    background-image: URL(../images/ready_assessment_bg.png);
     background-repeat: no-repeat;
-    width: 173px;
-    height: 19px;
+    width: 275px;
+    height: 21px;
     display: inline-block;
     color: #FFF;
     text-decoration: none;
     text-align: center;
-    font-size: 12px;
-    padding: 6px 0px;
-    margin-bottom: 10px;
-    margin-left: 20px;
+    font-size: 16px;
+    padding: 22px 0px;
+    margin-bottom: 5px;
+    margin-left: 5px;    
 }
 
 .completed_assessment-inside{
-    background-image: URL(../images/assessment-name.png);
+    background-image: URL(../images/assessments-btns.png);
     background-repeat: no-repeat;
-    width: 173px;
-    height: 19px;
+    width: 277px;
+    height: 21px;
     display: inline-block;
-    color: #f57d2e;
+    color: #1a5377;
     text-decoration: none;
     text-align: center;
-    font-size: 12px;
-    padding: 6px 0px;
-    margin-bottom: 10px;
-    margin-left: 20px;
+    font-size: 16px;
+    padding: 22px 0px;
+    margin-bottom: 5px;
+    margin-left: 5px;    
 }
 
 .h-line{
@@ -462,5 +467,5 @@ a#signup-btn{
 }
 
 #valid-assessment{
-    color: rgb(12, 173, 5);font-weight: bold;
+    color: rgb(253, 164, 0);
 }

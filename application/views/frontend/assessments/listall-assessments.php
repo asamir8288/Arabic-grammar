@@ -6,7 +6,7 @@
     </div>
 </div>
 
-<div class="assessment-menu-separator"></div>
+<div class="assessment-section-separator"></div>
 
 <div id="assessment-list"> 
     <input type="hidden" name="assessment_count" id="assessment_count" value="<?php echo count($userAssessment);?>" />

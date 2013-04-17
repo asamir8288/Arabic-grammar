@@ -55,7 +55,17 @@
                     });
                     break;
             }
-        }        
+        }  
+        
+        
+        $(".form-inline").validate({
+            debug: false,
+            rules: {
+                type_id: "required",                      
+                difficulty_level: "required",
+                interest_grammatical: "required"               
+            }            
+        }); 
     });
 </script>
 
@@ -88,14 +98,17 @@
         <div class="select-options-wrapper">
             <select class="custom-select" id="q_difficulty" name="difficulty_level">
                 <option value="">اختر</option>
-                <?php foreach ($questionDiffeculty as $item) {
+                <?php
+                foreach ($questionDiffeculty as $item) {
                     if (isset($question) && $question['difficulty_level'] == $item['id']) {
                         ?>
-                <option selected="selected" value="<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
+                        <option selected="selected" value="<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
                     <?php } else { ?>
                         <option value="<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
-    <?php }
-} ?>
+                        <?php
+                    }
+                }
+                ?>
             </select>
         </div>        
     </li>
@@ -110,12 +123,12 @@
     </li>
     <li class="field-group">
         <label class="form-label" for="">فائدة نحوية :</label>
-        <textarea type="text" name="interest_grammatical" id="feedback" ><?php echo (isset($question)) ? trim($question['QuestionAnswers'][0]['interest_grammatical']) : ''; ?></textarea>
+        <textarea type="text" name="interest_grammatical" id="interest_grammatical" ><?php echo (isset($question)) ? trim($question['QuestionAnswers'][0]['interest_grammatical']) : ''; ?></textarea>
     </li>
 
     <li class="btns">
-<?php echo form_submit('submit', 'اضافة سؤال', 'class="submit-btn"') ?>
-        <a href="<?php echo (isset($question)) ? site_url('admin/assessment/manage_questions/' .$question['assessment_id']) : site_url('admin/assessment/manage_questions/' . $this->uri->segment(4)); ?>">الغاء</a>
+        <?php echo form_submit('submit', 'اضافة سؤال', 'class="submit-btn"') ?>
+        <a href="<?php echo (isset($question)) ? site_url('admin/assessment/manage_questions/' . $question['assessment_id']) : site_url('admin/assessment/manage_questions/' . $this->uri->segment(4)); ?>">الغاء</a>
     </li>
 
 </ul>
