@@ -4,7 +4,7 @@
             minLength: 1,
             source: function(req, add){
                 $.ajax({
-                    url: site_url('assessment/auto_complete'),
+                    url: site_url() + 'assessment/auto_complete',
                     dataType: 'json',
                     type: 'POST',
                     data: req,
