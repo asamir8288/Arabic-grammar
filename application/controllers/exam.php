@@ -26,8 +26,11 @@ class Exam extends CI_Controller {
         $this->data['userAssessment'] = UserAssessmentsTable::getAllUserAssessments($this->user_info['user_id'], true, 1);
         $this->data['type'] = '1'; // Type 1 means it is an exam not training
 
+         $this->template->add_js('layout/js/jquery-ui.min.js');
+        $this->template->add_css('layout/css/jquery-ui.css');
         $this->template->add_js('layout/js/site_url_global.js');
         $this->template->add_js('layout/js/pages/frontend/exam-basket.js');
+        
         $this->template->write_view('content', 'frontend/assessments/listall-assessments', $this->data);
         $this->template->render();
     }

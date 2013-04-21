@@ -1,4 +1,10 @@
-<?php echo form_open(); ?>
+<style type="text/css">
+    .custom-checkbox{
+        top: 8px;
+    }
+</style>
+
+<?php echo form_open('', 'id="create_assessment"'); ?>
 <ul>  
     <div id="menu_groups">
         <li class="field-group">

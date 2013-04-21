@@ -67,5 +67,15 @@ class UserAssessmentsTable extends Doctrine_Table {
             return true;
         return false;
     }
+    
+    public static function getAssessmentByName($keyword = ''){
+        return Doctrine_Query::create()
+                ->select('a.name')
+                ->from('Assessments a')
+                ->where('a.name LIKE ?', '%' . $keyword .'%')
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->execute();
+                
+    }
 
 }

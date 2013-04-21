@@ -124,6 +124,7 @@ class Assessment extends CI_Controller {
         $this->template->add_css('layout/css/bootstrap-tagmanager.css');
         $this->template->add_js('layout/js/jquery-ui.min.js');
         $this->template->add_js('layout/js/bootstrap-tagmanager.js');
+        $this->template->add_js('layout/js/pages/create_question.js');
         
         $this->template->write_view('content', 'backend/assessments/create_question', $this->data);
         $this->template->render();

@@ -3,71 +3,6 @@
         margin-right: 158px;
     }
 </style>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#type_id').change(function(){
-            switch($('#type_id').val()){
-                case '1':
-                    $.get(site_url() + 'admin/assessment/multiChoices', function(data){
-                        $('#question_type').html(data);
-                    });
-                    break;
-                case '2':
-                    $.get(site_url() + 'admin/assessment/pressOnCorrectAnswer', function(data){
-                        $('#question_type').html(data);
-                    });                    
-                    break;
-                case '3':
-                    $.get(site_url() + 'admin/assessment/dragAndDrop', function(data){
-                        $('#question_type').html(data);
-                    });
-                    break;
-                case '4':
-                    $.get(site_url() + 'admin/assessment/dropdownsQuestion', function(data){
-                        $('#question_type').html(data);
-                    });
-                    break;
-            }
-        });
-        
-        var question_id = $('.question_id').val();
-        
-        if(question_id != '0'){
-            switch($('#type_id').val()){
-                case '1':
-                    $.get(site_url() + 'admin/assessment/multiChoices/' + question_id, function(data){
-                        $('#question_type').html(data);
-                    });
-                    break;
-                case '2':
-                    $.get(site_url() + 'admin/assessment/pressOnCorrectAnswer/' + question_id, function(data){
-                        $('#question_type').html(data);
-                    }); 
-                    break;
-                case '3':
-                    $.get(site_url() + 'admin/assessment/dragAndDrop/' + question_id, function(data){
-                        $('#question_type').html(data);
-                    });
-                    break;
-                case '4':
-                    $.get(site_url() + 'admin/assessment/dropdownsQuestion/' + question_id, function(data){
-                        $('#question_type').html(data);
-                    });
-                    break;
-            }
-        }  
-        
-        
-        $(".form-inline").validate({
-            debug: false,
-            rules: {
-                type_id: "required",                      
-                difficulty_level: "required",
-                interest_grammatical: "required"               
-            }            
-        }); 
-    });
-</script>
 
 <?php echo form_open($submit_url, 'class="form-inline"'); ?>
 <input type="hidden" name="question_id" class="question_id" value="<?php echo (isset($question)) ? $question['id'] : '0'; ?>" />
@@ -146,13 +81,13 @@ if (isset($question)) {
 }
 ?>
 <script type="text/javascript">               
-    jQuery(".tagfeedback:eq(0)").tagsManager({
-        prefilled: [<?php echo $feedback_tags; ?>],
-        preventSubmitOnEnter: true,
-        typeahead: true,
-        typeaheadAjaxSource: null,                    
-        blinkBGColor_1: '#FFFF9C',
-        blinkBGColor_2: '#CDE69C',
-        hiddenTagListName: 'feedback'
-    });                
+        jQuery(".tagfeedback:eq(0)").tagsManager({
+            prefilled: [<?php echo $feedback_tags; ?>],
+            preventSubmitOnEnter: true,
+            typeahead: true,
+            typeaheadAjaxSource: null,                    
+            blinkBGColor_1: '#FFFF9C',
+            blinkBGColor_2: '#CDE69C',
+            hiddenTagListName: 'feedback'
+        });                
 </script>

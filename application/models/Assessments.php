@@ -73,5 +73,17 @@ class Assessments extends BaseAssessments {
 
         return $q['id'];
     }
+    
+    public function getAssessmentIdByName($assessment_name) {        
+        $q = Doctrine_Query::create()
+                ->select('a.id')
+                ->from('Assessments a')
+                ->where('a.name LIKE ?', '%' . $assessment_name . '%')
+                ->andWhere('a.deleted=0')
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->fetchOne();
+
+        return $q['id'];
+    }
 
 }

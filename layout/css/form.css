@@ -17,9 +17,8 @@
 
     font-size:11px;
     color:#DD3C10;
-
     margin-right: 10px;
-    font-weight: bold;
+    font-weight: normal;
 }
 input.invalid {
     color: #323232;
@@ -148,7 +147,7 @@ textarea{
 .select-options-wrapper {
     width: 254px;
     overflow: hidden;
-    /*    float: right;*/
+    float: right;
     position: relative;
     padding: 0;
     margin-left: 18px;
@@ -406,4 +405,27 @@ h1{
 
 h1 span{
     color: #f57d2e;
+}
+
+.search-btn{
+    background: none;
+    border: none;
+    background-image: URL(../images/btn-search.png);
+    width: 95px;
+    height: 50px;
+    display: inline-block;    
+    position: relative;
+    top: 21px;
+    right: 16px;
+    z-index: 2000;
+    height: 50px;
+    float: right;
+}
+
+.search-txtbox{
+    width: 450px!important;
+    height: 40px!important;
+    float: right!important;
+    position: relative!important;
+    top: 21px!important;
 }
