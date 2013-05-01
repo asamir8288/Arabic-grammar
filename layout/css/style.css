@@ -469,3 +469,89 @@ a#signup-btn{
 #valid-assessment{
     color: rgb(253, 164, 0);
 }
+.timer {
+    margin: 43px 0;
+    height: 34px;
+    position: relative;
+    background: #e9f2f8;
+    border: 1px solid #DDE;
+    border-radius: 4px;
+    margin-right: -20px;
+    width: 845px;
+}
+
+.timer_meter {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -moz-border-bottom-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    white-space: nowrap; /* stuff for dynamic meter value */
+    overflow: hidden;
+    top: 0px;
+}
+
+.timer_meter {
+    background-color: #1F9CFF;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1F9CFF), to(#0595B9))   ; 
+    background-image: -webkit-linear-gradient(top, #1F9CFF, #0595B9);
+    background-image:    -moz-linear-gradient(top, #1F9CFF, #0595B9); 
+    background-image:     -ms-linear-gradient(top, #1F9CFF, #0595B9); 
+    background-image:      -o-linear-gradient(top, #1F9CFF, #0595B9); 
+    background-image:         linear-gradient(top, #1F9CFF, #0595B9);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#1F9CFF', EndColorStr='#0595B9'); 
+}
+
+.inactive .timer_meter {
+    background-color: #1E6982;
+    background-image: none;
+}
+
+.timer_value {
+    z-index:2;
+    color: #69b5e1;
+    font-size:13px;
+    line-height:34px;
+    font-weight: bold;
+    margin-left: 10px;
+    float:left;
+    font-size: 14px;
+}
+
+.timerWrapper{
+
+    width: 100%;
+    clear: both;
+}
+
+.resultWrapper{
+    height: 44px;
+    width: 846px;
+    background: rgb(238, 238, 238);
+    margin-right: -20px;
+    position: relative;
+    top: -30px;
+}
+
+.new_times_up {
+    position: absolute;
+    background: black url('../images/btn_times_up.png') no-repeat center center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    z-index: 10;
+    width: 847px;
+    height: 240px;
+    padding-bottom: 45px;
+    margin-right: -20px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.ocq-main-list-wrapper {
+    margin-top: 15px;
+}

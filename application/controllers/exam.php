@@ -127,6 +127,7 @@ class Exam extends CI_Controller {
                 break;
         }
 
+        $this->template->add_js('layout/js/jquery.timer.js');
         $this->template->write_view('content', 'frontend/assessments/question_exam_view', $this->data);
         $this->template->render();
     }

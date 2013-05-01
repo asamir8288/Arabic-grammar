@@ -1,5 +1,18 @@
 <?php echo form_open('', 'id="drag_drop_form"'); ?>
-<ul class="b-list">
+<div class="timerWrapper">	
+    <div class="border-3 shadow-4 timer active">				
+        <div class="timer_meter" style="overflow: hidden; width: 100%; ">
+            <div class="timer_value" style="color:#ffffff; whitespace: nowrap;"><span class='count'></span></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="resultWrapper" >	
+    <?php echo form_submit('submit', 'السؤال التالى', 'style="padding: 6px 17px;font-weight: bold;color: blue;font-size: 14px;position: relative;top: 4px;"');?>
+</div>
+
+<ul class="question-block b-list">
     <?php
     $template1 = explode(',', $q['question']);
     $answers = explode(',', $q['QuestionAnswers'][0]['answer_text']);

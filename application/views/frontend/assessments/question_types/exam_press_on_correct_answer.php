@@ -1,4 +1,17 @@
 <?php echo form_open($submit_url); ?>
+<div class="timerWrapper">	
+    <div class="border-3 shadow-4 timer active">				
+        <div class="timer_meter" style="overflow: hidden; width: 100%; ">
+            <div class="timer_value" style="color:#ffffff; whitespace: nowrap;"><span class='count'></span></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="resultWrapper" >	
+    <?php echo form_submit('submit', 'السؤال التالى', 'style="padding: 6px 17px;font-weight: bold;color: blue;font-size: 14px;position: relative;top: 4px;"');?>
+</div>
+<div class="question-block">
 <h2>عيّن مواضع الخطأ في العبارات التالية بالنقر عليها:</h2>
 <ol class="ocq-main-list-wrapper">
     <?php
@@ -23,3 +36,5 @@
 
 <?php echo form_submit('submit', ' ', 'class="next"');?>
 <?php echo form_close(); ?>
+
+</div>
