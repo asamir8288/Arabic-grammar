@@ -22,9 +22,19 @@
 
         <div id="wrapper">
 
-            <div id="container">
+            <div id="container">                
 
                 <div id="content-wrapper" style="padding:0">
+                    <div id="top-menu">
+                        <div class="links">
+                            <a href="">الرئيسية</a> | <a href="">عن الموقع</a> | <a href="">اتصل بنا</a>
+                        </div>
+                        <div class="account-actions">
+                            <div class="links">
+                                <a href="">دخول</a> | <a href="<?php echo site_url('signup');?>">تسجيل</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <div id="homepage-content">
 
@@ -66,7 +76,7 @@
                                         حساب جديد
                                     </li>
                                     <li>
-                                        <a href="<?php echo site_url('signup');?>" id="signup-btn"></a>
+                                        <a href="<?php echo site_url('signup'); ?>" id="signup-btn"></a>
                                     </li>
                             </div>
                         </div>
@@ -76,7 +86,7 @@
                         <div id="footer">
                             <a href="">دار العالم العربي</a>
                             <a href="">اتصل بنا</a>
-                            <a href="<?php echo site_url('signup');?>">انضم الينا</a>
+                            <a href="<?php echo site_url('signup'); ?>">انضم الينا</a>
                         </div>
                     </div>
 

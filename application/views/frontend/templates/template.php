@@ -19,6 +19,16 @@
             <div id="container">
 
                 <div id="content-wrapper" style="padding:0">
+                     <div id="top-menu">
+                        <div class="links">
+                            <a href="">الرئيسية</a> | <a href="<?php echo site_url('exam/listall');?>">اختبارات</a> | <a href="<?php echo site_url('assessment/listall');?>">تدريبات</a>
+                        </div>
+                        <div class="account-actions">
+                            <div class="links">
+                                <a href="<?php echo site_url('login/logout');?>">تسجيل الخروج</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <div id="inner-page-content">
 
@@ -30,10 +40,7 @@
                                     <a href="" class="twitter"></a>
                                     <a href="" class="google"></a>
                                     <a href="" class="linkedin"></a>
-                                </div>
-                                <div class="login-logout-place">
-                                    <a href="<?php echo site_url('login/logout');?>">تسجيل الخروج</a>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                         <div id="content">

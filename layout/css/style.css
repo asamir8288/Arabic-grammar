@@ -18,7 +18,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 
 body{
-    background: white;
+    background: URL(../images/body-bg.png);
+    background-repeat: repeat;
     color: #939393;
     text-align: right;
     direction: rtl;
@@ -58,6 +59,42 @@ body{
     clear: both;
     padding-bottom: 10px;
 }
+
+#top-menu{
+    background-image: URL(../images/main-menu-bg.png);
+    height: 36px;
+    display: block;
+    background-repeat: repeat-x;
+}
+
+#top-menu .links, #top-menu .account-actions .links{
+    position: relative;
+    top: 7px;
+    right: 12px;
+}
+#top-menu .account-actions{
+    background-color: #0d486e;
+    height: 36px;
+    width: 133px;
+    display: block;
+    float: left;
+    position: relative;
+    left: 0px;
+    top: -20px;
+}
+
+#top-menu .links a, #top-menu .account-actions a{
+    color: #FFF;
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#top-menu .links a:hover, #top-menu .account-actions a:hover{
+    color: #CCC;
+}
+
+
 
 #content{
     width: 846px;

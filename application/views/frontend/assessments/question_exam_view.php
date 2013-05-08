@@ -65,10 +65,7 @@
     true
 );	
 		
-    $(document).ready(function(){
-		
-
-		
+    $(document).ready(function(){		
         $(".resultWrapper").hide();		
 		
         // Answer Clicked [Stop Timer]
