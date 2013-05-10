@@ -46,7 +46,7 @@ $(document).ready(function(){
             $.get(site_url() + 'assessment/addby_assessment_name/' + assessment_name + '/1', function(result){  
                 if(result == true){
                     if($('#assessment-list').length > 0){
-                        $('.start-trainings').show();
+                        $('.start-exams').show();
                     }
                     $('.no-assessment').remove();
                     $('.start-exams').before('<div class="assessment-name-box">'+ assessment_name +'</div>');
