@@ -5,14 +5,14 @@
 		
 		
     //Change Time Here
-    var difficulty ="medium";
+    var difficulty ="2";
 		
-    if(difficulty =="easy")
-        countDownTime = 20;
-    else if(difficulty =="medium")
-        countDownTime = 5;
+    if(difficulty =="<?php echo $assessmentQuestions['difficulty_level'];?>")
+        countDownTime = 30;
+    else if(difficulty =="<?php echo $assessmentQuestions['difficulty_level'];?>")
+        countDownTime = 50;
     else
-        countDownTime = 40;
+        countDownTime = 70;
 		
 		
     var stopTimer = false;
@@ -80,7 +80,6 @@
 		
 		
 </script>
-
 
 <div style="margin-top: 50px;">
     <?php
