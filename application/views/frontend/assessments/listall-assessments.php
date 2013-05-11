@@ -19,8 +19,9 @@
     });
 </script>
 <form method="GET" action="<?php echo base_url(); ?>assessment/auto_complete">
+    <a href="" class="search"></a>
+    <input type="text" name="q" id="q" class="search-txtbox">
     <a href="" class="search-btn"></a>
-    <input type="text" name="q" id="q" class="search-txtbox">    
 </form>
 <div class="clear" style="height: 45px;"></div>
 

@@ -76,7 +76,7 @@ input[type="custom-checkbox"].invalid {
 input[type="text"],input[type="email"], input[type="password"], input[type="url"],input[type="number"]{
     font-family:'HacenSaudiArabia', Tahoma, Arial;
     height: 27px;
-    font-size: 13px;
+    font-size: 16px;
     border: 1px solid #e4e4e4;
     padding: 4px 13px 4px 13px;
     /*    float: right;
@@ -407,7 +407,7 @@ h1 span{
     color: #f57d2e;
 }
 
-.search-btn{
+.search{
     background: none;
     border: none;
     background-image: URL(../images/btn-search.png);
@@ -419,6 +419,20 @@ h1 span{
     right: 16px;
     z-index: 2000;
     height: 50px;
+    float: right;
+}
+
+.search-btn{
+    background: none;
+    border: none;
+    background-image: URL(../images/add-button.png);
+    width: 113px;
+    height: 50px;
+    display: inline-block;    
+    position: relative;
+    top: 21px;
+    right: 10px;
+    z-index: 2000;
     float: right;
 }
 

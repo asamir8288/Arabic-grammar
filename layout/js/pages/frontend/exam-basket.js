@@ -41,6 +41,31 @@ $(document).ready(function(){
     });
     
     $('.search-btn').click(function(e){
+        e.preventDefault();
+        var assessment_name = $('#q').val();
+        $.get(site_url() + 'assessment/addby_assessment_name/' + assessment_name + '/1', function(result){  
+            if(result == true){
+                if($('#assessment-list').length > 0){
+                    $('.start-exams').show();
+                }
+                $('.no-assessment').remove();
+                $('.start-exams').before('<div class="assessment-name-box">'+ assessment_name +'</div>');
+            }else{
+                if(result == 'still_running'){
+                // TODO
+                }else{
+                    $('.no-assessment').html('<div style="background-color: #FF0000;padding: 5px;color: #FFF;">هذا التدريب غير فعال الان</div>');
+                    //                            $('.no-assessment').show();
+                    $('.no-assessment').fadeIn('slow').delay(2000).fadeOut('slow');
+                }
+                        
+            }
+        }, 'json');
+    });
+        
+    $('input[name="q"]').keypress(function(e){
+            
+        if(e.which == 13){
             e.preventDefault();
             var assessment_name = $('#q').val();
             $.get(site_url() + 'assessment/addby_assessment_name/' + assessment_name + '/1', function(result){  
@@ -52,7 +77,7 @@ $(document).ready(function(){
                     $('.start-exams').before('<div class="assessment-name-box">'+ assessment_name +'</div>');
                 }else{
                     if(result == 'still_running'){
-                        // TODO
+                    // TODO
                     }else{
                         $('.no-assessment').html('<div style="background-color: #FF0000;padding: 5px;color: #FFF;">هذا التدريب غير فعال الان</div>');
                         //                            $('.no-assessment').show();
@@ -61,5 +86,6 @@ $(document).ready(function(){
                         
                 }
             }, 'json');
-        });
+        }   
+    });
 });    

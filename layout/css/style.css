@@ -99,6 +99,7 @@ body{
 #content{
     width: 846px;
     margin: 0 auto;
+    min-height: 400px;
 }
 
 #content-wrapper {
@@ -129,7 +130,7 @@ body{
     background-image: URL(../images/kalamona-watermark.png);
     background-repeat: no-repeat;
     display: block;
-    background-position: 100px 300px;
+    background-position: 100px 355px;
 }
 
 #homepage-content{
@@ -167,12 +168,24 @@ body{
 
 .welcome-screen-description{
     color: rgb(227, 232, 236);
-    width: 346px;
+    width: 306px;
     line-height: 22px;
     font-size: 14px;
     position: relative;
     right: 267px;
     top: -140px;
+}
+
+.welcome-screen-description-left{
+    float: left;width: 300px;position: relative;top: 50px;color: #1d4b6c;left: -80px;
+    font-size: 16px;
+}
+
+.welcome-screen-description-left p{
+    font-family: arial;
+    font-size: 14px;
+    color: #FFF;
+    margin-top: 5px;
 }
 
 .main_title{
