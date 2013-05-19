@@ -17,7 +17,7 @@ class ACL {
         $CI = & get_instance();
         $user_info = $CI->session->userdata('user_info');
         if($user_info){
-            if($CI->uri->segment(1) == ''){
+            if($CI->uri->segment(1) == '' || $CI->uri->segment(1) == 'beta'){
                 redirect('dashboard');
             }
         }else{
