@@ -11,4 +11,17 @@ $(document).ready(function(){
             $('.specialization').slideUp();
         }
     });
+    
+    $(".signup_form").validate({
+        debug: false,
+        rules: {
+            name: "required",                      
+            email: {
+                required: true,
+                email: true
+            },
+            password: "required",
+            grade_id : "required"
+        }            
+    }); 
 });

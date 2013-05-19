@@ -38,7 +38,9 @@ class Site extends CI_Controller{
         $this->data['grades'] = LookupGradesTable::getAllGrades();
         
         $this->template->add_js('layout/js/site_url_global.js');
+        $this->template->add_js('layout/js/jquery.validate.min.en.js');
         $this->template->add_js('layout/js/pages/signup.js');
+        
         $this->template->write_view('content', 'frontend/signup_view', $this->data);
         $this->template->render();
     }

@@ -3,7 +3,7 @@
 <p>
     رجاء ملء كافة البيانات التالية لنتمكن من إنشاء حساب مجانى  جديد لك 
 </p>
-<?php echo form_open(); ?>
+<?php echo form_open('', 'class="signup_form"'); ?>
 <ul>
     <li class="field-group">
         <label class="form-label" for="">الاسم :</label>
