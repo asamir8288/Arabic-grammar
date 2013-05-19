@@ -6,6 +6,9 @@ $(document).ready(function(){
                 $('.academic_years').slideDown();
                 $('.specialization').slideDown();
             });
+        }else{
+            $('.academic_years').slideUp();
+            $('.specialization').slideUp();
         }
     });
 });

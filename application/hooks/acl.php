@@ -21,7 +21,7 @@ class ACL {
                 redirect('dashboard');
             }
         }else{
-            if(!$_POST && $CI->uri->segment(1) != '' && $CI->uri->segment(1) != 'signup'){
+            if(!$_POST && $CI->uri->segment(1) != '' && $CI->uri->segment(1) != 'signup' && $CI->uri->segment(2) != 'get_grade_years'){
                 redirect('/');
             }
         }
