@@ -23,7 +23,7 @@ body{
     color: #939393;
     text-align: right;
     direction: rtl;
-    font-size: 20px;
+    font-size: 13px;
 }
 
 
@@ -38,7 +38,7 @@ body{
     font-style: normal;
 }
 .hacen {
-    font-family: "Arabic Typesetting",'HacenSaudiArabia', Tahoma, Arial;
+    font-family:'HacenSaudiArabia', Tahoma, Arial;
 }
 
 #wrapper {
@@ -85,7 +85,7 @@ body{
 
 #top-menu .links a, #top-menu .account-actions a{
     color: #FFF;
-    font-size: 21px;
+    font-size: 14px;
     text-decoration: none;
     margin-left: 5px;
     margin-right: 5px;
@@ -170,7 +170,7 @@ body{
     color: rgb(227, 232, 236);
     width: 306px;
     line-height: 22px;
-    font-size: 21px;
+    font-size: 14px;
     position: relative;
     right: 267px;
     top: -140px;
@@ -178,8 +178,7 @@ body{
 
 .welcome-screen-description-left{
     float: left;width: 300px;position: relative;top: 50px;color: #1d4b6c;left: -80px;
-    font-size: 30px;
-    line-height: 25px;
+    font-size: 16px;
 }
 
 .welcome-screen-description-left p{
@@ -359,7 +358,7 @@ a#signup-btn{
     color: #FFF;
     margin-right: 10px;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 11px;
     width: 195px;
 }
 
