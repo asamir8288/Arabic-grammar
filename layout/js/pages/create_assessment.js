@@ -9,17 +9,22 @@ $(document).ready(function(){
         }	  	
     });
     
-    $('#menu_id').live("change", function(){    
+    $('#menu_id').live("change", function(){   
         $(this).parent().parent().nextAll().remove();
-        $.get(site_url() + 'admin/assessment/get_submenu_items/' + $(this).val(), function(data){
-            if(data != 'done'){
-                $('#menu_groups').append(data);
-            }else{
-                var assessment_name = $(this + ':selected').last().text();
-                $('#name').val(assessment_name);
-                $('#assessment_fields').slideDown();
-            }            
-        })
+        if($('#menu_id option:selected').val() != ''){            
+            $.get(site_url() + 'admin/assessment/get_submenu_items/' + $(this).val(), function(data){
+                if(data != 'done'){
+                    $('#menu_groups').append(data);
+                }else{
+                    var assessment_name = $(this + ':selected').last().text();
+                    $('#name').val(assessment_name);
+                    $('#assessment_fields').slideDown();
+                }            
+            })
+        }else{
+            $('#assessment_fields').slideUp();
+        }
+        
     });
     
     // validation section

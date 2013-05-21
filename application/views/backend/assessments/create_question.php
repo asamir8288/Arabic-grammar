@@ -62,7 +62,13 @@
     </li>
 
     <li class="btns">
-        <?php echo form_submit('submit', 'اضافة سؤال', 'class="submit-btn"') ?>
+        <?php
+        if (isset($edit_mode) && $edit_mode) {
+            echo form_submit('submit', 'تعديل السؤال', 'class="submit-btn"');
+        } else {
+            echo form_submit('submit', 'اضافة سؤال', 'class="submit-btn"');
+        }
+        ?>
         <a href="<?php echo (isset($question)) ? site_url('admin/assessment/manage_questions/' . $question['assessment_id']) : site_url('admin/assessment/manage_questions/' . $this->uri->segment(4)); ?>">الغاء</a>
     </li>
 
@@ -81,13 +87,13 @@ if (isset($question)) {
 }
 ?>
 <script type="text/javascript">               
-        jQuery(".tagfeedback:eq(0)").tagsManager({
-            prefilled: [<?php echo $feedback_tags; ?>],
-            preventSubmitOnEnter: true,
-            typeahead: true,
-            typeaheadAjaxSource: null,                    
-            blinkBGColor_1: '#FFFF9C',
-            blinkBGColor_2: '#CDE69C',
-            hiddenTagListName: 'feedback'
-        });                
+    jQuery(".tagfeedback:eq(0)").tagsManager({
+        prefilled: [<?php echo $feedback_tags; ?>],
+        preventSubmitOnEnter: true,
+        typeahead: true,
+        typeaheadAjaxSource: null,                    
+        blinkBGColor_1: '#FFFF9C',
+        blinkBGColor_2: '#CDE69C',
+        hiddenTagListName: 'feedback'
+    });                
 </script>

@@ -45,7 +45,8 @@ class Assessment extends CI_Controller {
         $this->template->render();
     }
     
-    public function get_submenu_items($menu_id){        
+    public function get_submenu_items($menu_id=''){   
+        
         $this->data['subMenuItems'] = MenuTable::getSubMenuItems($menu_id);
         
         $this->load->view('backend/assessments/submenu_items', $this->data);
@@ -166,10 +167,12 @@ class Assessment extends CI_Controller {
         $this->data['submit_url'] = site_url('admin/assessment/edit_question/' . $question_id);
         $this->data['questionTypes'] = QuestionTypesTable::getAllQuestionTypes();
         $this->data['questionDiffeculty'] = DifficultyLevelsTable::getAllDifficultyLevels();
+        $this->data['edit_mode'] = true;
         
         $this->template->add_css('layout/css/bootstrap-tagmanager.css');
         $this->template->add_js('layout/js/jquery-ui.min.js');
         $this->template->add_js('layout/js/bootstrap-tagmanager.js');
+        $this->template->add_js('layout/js/pages/create_question.js');
         
         $this->template->write_view('content', 'backend/assessments/create_question', $this->data);
         $this->template->render();
