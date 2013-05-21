@@ -27,7 +27,11 @@
                 <div id="content-wrapper" style="padding:0">
                     <div id="top-menu">
                         <div class="links">
-                            <a href="">الرئيسية</a> | <a href="">عن الموقع</a> | <a href="">اتصل بنا</a>
+                            <a href="<?php echo site_url('/'); ?>">الرئيسية</a>
+                            | 
+                            <a href="<?php echo site_url('about-us'); ?>">عن الموقع</a>
+                            | 
+                            <a href="<?php echo site_url('contact-us'); ?>">اتصل بنا</a>
                         </div>
                         <div class="account-actions">
                             <div class="links">
@@ -42,15 +46,8 @@
                             <div class="welcome-screen-description-left">
                                من أقوال القدماء
 <br />
-                                قال جعفر بن محمد - جعفر الصادق                           
-                                
-                                <p>
-                                إن لأمير المؤمنين عليِّ كرم الله وجهه تسع كلمات: ثلاث منها في المناجاة، وثلاث منها في الحكمة، وثلاث منها في الأدب
-فأما اللواتي في المناجاة فقوله: إلهي، كفاني فخرًا أن تكون لي ربَّا. وكفاني عِزَّا أن أكون لك عبدًا. أنت لي كما أحب، فاجعلْني لك كما تحب
-                                </p>
-                                <p>
-                                    وأمّا اللواتي في الحكمة فقوله: امْنُنْ على مَن شئتَ تكُنْ أميرَه، واحتجْ إلى مَن شِئتَ تكن أسيرَه، واستغنِ عمَّن شِئتَ تكن نظيره
-وأما اللواتي في الأدب فقوله: قيمة كل امرىء ما يُحْسِنُه، والمرء مخبوءٌ تحت لسانه، والناس أعداء ما جهِلوا
+                               <p>
+                                    <?php echo nl2br($sayings['content']); ?>
                                 </p>
                             </div>
                             <img style="margin-right: 56px;margin-top: 49px;" src="<?php echo static_url(); ?>layout/images/welcome-screen.png" />

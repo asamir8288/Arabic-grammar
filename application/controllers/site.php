@@ -18,8 +18,12 @@ class Site extends CI_Controller{
         parent::__construct();
     }
     
-    public function index(){       
-        $this->load->view('frontend/templates/home_template');
+    public function index(){
+        $p = new Pages();
+        $page = $p->getPage('sayings');
+        $this->data['sayings'] = $page;
+        
+        $this->load->view('frontend/templates/home_template', $this->data);
     }
     
     public function signup(){
@@ -44,6 +48,21 @@ class Site extends CI_Controller{
         $this->template->write_view('content', 'frontend/signup_view', $this->data);
         $this->template->render();
     }
+    
+    public function about_us(){
+        $p = new Pages();
+        $page = $p->getPage('about-us');
+        $this->data['aboutUs'] = $page;
+        
+        $this->template->write_view('content', 'frontend/about_us', $this->data);
+        $this->template->render();
+    }
+    
+    public function contact_us(){                
+        $this->template->write_view('content', 'frontend/contact_us', $this->data);
+        $this->template->render();
+    }
+    
     
     public function get_grade_years($grade_id){
         $years = new LookupAcademicYears();

@@ -42,6 +42,8 @@ $route['default_controller'] = "site";
 $route['404_override'] = '';
 
 $route['signup'] = 'site/signup';
+$route['about-us'] = 'site/about_us';
+$route['contact-us'] = 'site/contact_us';
 $route['dashboard'] = 'site/dashboard';
 $route['question/(:any)'] = 'question/question/$1';
 

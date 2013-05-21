@@ -25,7 +25,11 @@
                         if ($user_info) {
                             ?>
                             <div class="links">
-                                <a href="">الرئيسية</a> | <a href="<?php echo site_url('exam/listall'); ?>">اختبارات</a> | <a href="<?php echo site_url('assessment/listall'); ?>">تدريبات</a>
+                                <a href="">الرئيسية</a>
+                                | 
+                                <a href="<?php echo site_url('exam/listall'); ?>">اختبارات</a>
+                                | 
+                                <a href="<?php echo site_url('assessment/listall'); ?>">تدريبات</a>
                             </div>
                             <div class="account-actions">
                                 <div class="links">
@@ -34,12 +38,16 @@
                             </div>
                         <?php } else { ?>
                             <div class="links">
-                                <a href="">الرئيسية</a> | <a href="">عن الموقع</a> | <a href="">اتصل بنا</a>
+                                <a href="<?php echo site_url('/'); ?>">الرئيسية</a>
+                                | 
+                                <a href="<?php echo site_url('about-us'); ?>">عن الموقع</a>
+                                | 
+                                <a href="<?php echo site_url('contact-us'); ?>">اتصل بنا</a>
                             </div>
                             <div class="account-actions">
                                 <div class="links">
-                                    <a href="" style="margin-right: 36px;">دخول</a>
-                                </div>
+                                <a href="<?php echo site_url('/'); ?>">دخول</a> | <a href="<?php echo site_url('signup'); ?>">تسجيل</a>
+                            </div>
                             </div>
                         <?php } ?>
                     </div>
