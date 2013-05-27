@@ -2,7 +2,8 @@
     <?php
     $answers = explode(',', $q['QuestionAnswers'][0]['answer_text']);
     $feedbacks = explode(',', $q['QuestionAnswers'][0]['feedback']);
-    var_dump($feedbacks);
+    var_dump($q['QuestionAnswers'][0]['feedback']);
+    var_dump($q['QuestionAnswers'][0]['answer_text']);
     $answer_with_feedback = array();
     for ($i = 0; $i < count($answers); $i++) {
         $answer_with_feedback[] = $answers[$i] . ',' . $feedbacks[$i];
