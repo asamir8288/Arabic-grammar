@@ -69,13 +69,13 @@
         $(".resultWrapper").hide();		
 		
         // Answer Clicked [Stop Timer]
-        $('ol li').click(function(){ 
-            timer1.pause();
-            timer2.pause();
-            stopTimer = true;
-            $(".resultWrapper").show();		
-			
-        });		
+//        $('ol li').click(function(){ 
+//            timer1.pause();
+//            timer2.pause();
+//            stopTimer = true;
+//            $(".resultWrapper").show();		
+//			
+//        });		
     });		
 		
 		
