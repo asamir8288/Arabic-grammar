@@ -28,17 +28,18 @@ body{
 
 
 @font-face {
-    font-family: 'HacenSaudiArabia';
-    src: url('../fonts/hacen_saudi_arabia.eot');
-    src: url('../fonts/hacen_saudi_arabia.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/hacen_saudi_arabia.woff') format('woff'),
-        url('../fonts/hacen_saudi_arabia.ttf') format('truetype'),
-        url('../fonts/hacen_saudi_arabia.svg#hacen_saudi_arabia') format('svg');
-    font-weight: normal;
-    font-style: normal;
+ font-family: customFont;
+  src: url('../fonts/HelveticaNeueW23-Reg.eot');
+    src: url('../fonts/HelveticaNeueW23-Reg.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaNeueW23-Reg.woff') format('woff'),
+         url('../fonts/HelveticaNeueW23-Reg.ttf') format('truetype'),
+         url('../fonts/HelveticaNeueW23-Reg.svg#helvetica_neue') format('svg');		 
+	font-weight: normal;
+	font-style: normal;
+	
 }
 .hacen {
-    font-family:'HacenSaudiArabia', Tahoma, Arial;
+    font-family:customFont, Tahoma, Arial;
 }
 
 #wrapper {
@@ -178,13 +179,12 @@ body{
 
 .welcome-screen-description-left{
     float: left;width: 300px;position: relative;top: 50px;color: #1d4b6c;left: -80px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .welcome-screen-description-left p{
-    font-family: arial;
+    color: rgb(227, 232, 236);
     font-size: 14px;
-    color: #FFF;
     margin-top: 5px;
 }
 
