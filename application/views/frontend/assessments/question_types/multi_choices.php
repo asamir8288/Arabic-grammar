@@ -2,11 +2,14 @@
     <?php
     $answers = explode(',', $q['QuestionAnswers'][0]['answer_text']);
     $feedbacks = explode(',', $q['QuestionAnswers'][0]['feedback']);
-    var_dump($q['QuestionAnswers'][0]['feedback']);
-    var_dump($q['QuestionAnswers'][0]['answer_text']);
+
     $answer_with_feedback = array();
     for ($i = 0; $i < count($answers); $i++) {
-        $answer_with_feedback[] = $answers[$i] . ',' . $feedbacks[$i];
+        $feedback = '';
+        if (isset($feedbacks[$i])) {
+            $feedback = $feedbacks[$i];
+        }
+        $answer_with_feedback[] = $answers[$i] . ',' . $feedback;
     }
     $answers = shuffle_assoc($answer_with_feedback);
     ?>
@@ -16,7 +19,8 @@
         </span>
         <ul class="ocq-inner-list-wrapper">
 
-            <?php for ($i = 0; $i < count($answers); $i++) { 
+            <?php
+            for ($i = 0; $i < count($answers); $i++) {
                 $answer = explode(',', $answers[$i]);
                 ?>
                 <li class="ocq-inner-list">
@@ -24,13 +28,19 @@
                     <label><?php echo $answer[0]; ?></label>
                     <?php if ($answer[0] == $q['QuestionAnswers'][0]['correct_answer']) { ?>
                         <span class="ocq-question-answer ocq-correct-answer" >(أحسنت, اجابة صحيحة)</span>
-                    <?php } else { ?>
-                        <span  class="ocq-question-answer ocq-wrong-answer" >(<?php echo $answer[1]; ?>)</span>
-                    <?php } ?>
+                    <?php
+                    } else {
+                        if ($answer[1] != '') {
+                            ?>
+                            <span  class="ocq-question-answer ocq-wrong-answer" >(<?php echo $answer[1]; ?>)</span>
+                            <?php
+                        }
+                    }
+                    ?>
                 </li>
-            <?php } ?>                       
+<?php } ?>                       
         </ul>
     </li>
 </ol>
 
-<a href="<?php echo site_url('question/' . $this->uri->segment(2). '/' . $q['id']);?>" class="next"></a>
+<a href="<?php echo site_url('question/' . $this->uri->segment(2) . '/' . $q['id']); ?>" class="next"></a>

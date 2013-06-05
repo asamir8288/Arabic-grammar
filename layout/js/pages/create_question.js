@@ -56,8 +56,7 @@ $(document).ready(function(){
         debug: false,
         rules: {
             type_id: "required",                      
-            difficulty_level: "required",
-            interest_grammatical: "required"               
+            difficulty_level: "required"          
         }            
     }); 
         
@@ -79,12 +78,12 @@ $(document).ready(function(){
                     error_flag = false;
                 }
                     
-                if($('#feedback_1').length == 0){                        
-                    $('#feedback').after('<span generated="true" class="error" style="position: relative;top: 4px;clear: both;position: relative;top: 4px;display: block;float: right;margin-right: 157px;">من فضلك ادخل هذا الحقل</span>');
-                    error_flag = false;
-                }else{
-                    $('#feedback').find($('.error')).remove();
-                }
+//                if($('#feedback_1').length == 0){                        
+//                    $('#feedback').after('<span generated="true" class="error" style="position: relative;top: 4px;clear: both;position: relative;top: 4px;display: block;float: right;margin-right: 157px;">من فضلك ادخل هذا الحقل</span>');
+//                    error_flag = false;
+//                }else{
+//                    $('#feedback').find($('.error')).remove();
+//                }
                 break;
                 
             case '3':
