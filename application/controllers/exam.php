@@ -36,7 +36,16 @@ class Exam extends CI_Controller {
     }
 
     public function my_exams() {
-        $this->data['userAssessment'] = UserAssessmentsTable::getAllUserAssessments($this->user_info['user_id'], false, 1); // 1 means it is an exam not training        
+        $this->data['userAssessment'] = UserAssessmentsTable::getAllUserAssessments($this->user_info['user_id'], 1, 1); // 1 means it is an exam not training        
+        $this->data['allCompleted'] = UserAssessmentsTable::isAllAssessmentCompleted($this->user_info['user_id'], 1); // 1 means it is an exam not training
+        $this->data['type'] = '1'; // Type 1 means it is an exam not training                
+
+        $this->template->write_view('content', 'frontend/assessments/preview_chosen_assessments', $this->data);
+        $this->template->render();
+    }
+
+    public function my_previous_exams() {
+        $this->data['userAssessment'] = UserAssessmentsTable::getAllUserAssessments($this->user_info['user_id'], 0, 1); // 1 means it is an exam not training        
         $this->data['allCompleted'] = UserAssessmentsTable::isAllAssessmentCompleted($this->user_info['user_id'], 1); // 1 means it is an exam not training
         $this->data['type'] = '1'; // Type 1 means it is an exam not training                
 

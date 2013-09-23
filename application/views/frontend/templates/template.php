@@ -9,6 +9,7 @@
         <?php echo $_styles; ?>
 
         <script src="<?php echo static_url(); ?>layout/js/jquery-1.7.2.min.js"></script>
+        <script src="<?php echo static_url(); ?>layout/js/menu.js"></script>
         <?php echo $_scripts; ?>
     </head>
 
@@ -19,7 +20,7 @@
             <div id="container">
 
                 <div id="content-wrapper" style="padding:0">
-                    <div id="top-menu">
+                    <div id="top-menu" class="top_menu">
                         <?php
                         $user_info = $this->session->userdata('user_info');
                         if ($user_info) {
@@ -27,9 +28,21 @@
                             <div class="links">
                                 <a href="">الرئيسية</a>
                                 | 
-                                <a href="<?php echo site_url('exam/listall'); ?>">اختبارات</a>
+                                <a menu_id="db"  class="sub" href="<?php echo site_url('exam/listall'); ?>">اختبارات</a>
+                                <ul class="submenu" id="db" style="display: none;">
+                                    <li class="submenu_header"></li>
+                                    <li class="submenu_bg" style="width: 180px;"><a href="<?php echo site_url() . 'exam/listall'; ?>">اختار اختبار جديد</a></li>
+                                    <li class="submenu_bg" style="width: 180px;"><a href="<?php echo site_url() . 'exam/my_exams'; ?>">قائمة اختباراتي الحالية</a></li>                                   
+                                    <li class="submenu_bg" style="width: 180px;"><a href="<?php echo site_url() . 'exam/my_previous_exams'; ?>">قائمة اختباراتي السابقة</a></li>                                  
+                                </ul>
                                 | 
-                                <a href="<?php echo site_url('assessment/listall'); ?>">تدريبات</a>
+                                <a menu_id="db1"  class="sub" href="<?php echo site_url('assessment/listall'); ?>">تدريبات</a>
+                                <ul class="submenu" id="db1" style="display: none;">
+                                    <li class="submenu_header"></li>
+                                    <li class="submenu_bg" style="width: 180px;"><a href="<?php echo site_url() . 'assessment/listall'; ?>">اختار تدريب جديد</a></li>
+                                    <li class="submenu_bg" style="width: 180px;"><a href="<?php echo site_url() . 'assessment/my_assessments'; ?>">قائمة تدريباتي الحالية</a></li>                                   
+                                    <li class="submenu_bg" style="width: 180px;"><a href="<?php echo site_url() . 'assessment/previous_assessments'; ?>">قائمة تدريباتي السابقة</a></li>                                  
+                                </ul>
                             </div>
                             <div class="account-actions">
                                 <div class="links">
