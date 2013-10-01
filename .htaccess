@@ -6,7 +6,7 @@ Options -Indexes
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
 
-    RewriteRule ^(.*)$ /arabic_grammer/index.php/$1 [L]
+    RewriteRule ^(.*)$ /klamona/index.php/$1 [L]
 
 </IfModule>
 

@@ -27,6 +27,7 @@ class UserAssessmentAnswersTable extends Doctrine_Table {
         $results = array();
         $total = 0;
         $result = 0;
+        $num_correct_answer = 0;
         foreach ($answers as $answer) {
             if ($answer['correct_answer']) {
                 switch ($answer['Questions']['DifficultyLevels']['id']) {
@@ -40,6 +41,7 @@ class UserAssessmentAnswersTable extends Doctrine_Table {
                         $result += 25;
                         break;
                 }
+                $num_correct_answer++;
             }
 
             switch ($answer['Questions']['DifficultyLevels']['id']) {
@@ -57,6 +59,7 @@ class UserAssessmentAnswersTable extends Doctrine_Table {
 
         $results['result'] = $result;
         $results['total'] = $total;
+        $results['num_correct_answer'] = $num_correct_answer;
         return $results;
     }
 

@@ -90,10 +90,18 @@ class Assessment extends CI_Controller {
     
     public function previous_assessments() {
         $this->data['userAssessment'] = UserAssessmentsTable::getAllUserAssessments($this->user_info['user_id'], 0);
-
         $this->data['allCompleted'] = UserAssessmentsTable::isAllAssessmentCompleted($this->user_info['user_id']);
+        $this->data['previously'] = true; // that mean this will not display the next button 
 
         $this->template->write_view('content', 'frontend/assessments/preview_chosen_assessments', $this->data);
+        $this->template->render();
+    }
+    
+    public function results($assessment_id){
+        $this->data['assessments'] = UserAssessmentsTable::getExamResults($assessment_id, 2); 
+//        pre_print($this->data['assessments'][0]);
+        
+        $this->template->write_view('content', 'frontend/assessments/assessment_results', $this->data);
         $this->template->render();
     }
 

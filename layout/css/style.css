@@ -194,6 +194,10 @@ body{
     margin-top: 30px;
     margin-bottom: 30px;
 }
+.sub_title{
+    color: #598ea7;
+    font-size: 18px;
+}
 
 .inside-top-screen #content .welcome-inside-message{
     background-image: URL(../images/kalamona-message.png);
@@ -645,4 +649,8 @@ a#signup-btn{
 .top_menu .sub{
     height: 22px;
     padding-bottom: 15px;
+}
+
+.same-exam-details div p {
+    margin-top: 10px;
 }

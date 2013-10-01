@@ -79,5 +79,19 @@ class UserAssessmentsTable extends Doctrine_Table {
                 ->execute();
                 
     }
+    
+    public function getExamResults($assessment_id, $assessment_type = 1) { // Exams selected by type 1
+        $q = Doctrine_Query::create()
+                ->select('ua.id, ua.created_at, a.*, uaa.*, q.*')
+                ->from('UserAssessments ua, ua.Assessments a, ua.UserAssessmentAnswers uaa')
+                ->where('ua.assessment_id =?', $assessment_id)
+                ->andWhere('ua.completed =1')
+                ->andWhere('ua.assessment_type =?', $assessment_type)
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->orderBy('ua.created_at DESC')
+                ->execute();
+        
+        return $q;
+    }
 
 }

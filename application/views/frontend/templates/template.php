@@ -26,7 +26,7 @@
                         if ($user_info) {
                             ?>
                             <div class="links">
-                                <a href="">الرئيسية</a>
+                                <a href="<?php echo site_url();?>">الرئيسية</a>
                                 | 
                                 <a menu_id="db"  class="sub" href="<?php echo site_url('exam/listall'); ?>">اختبارات</a>
                                 <ul class="submenu" id="db" style="display: none;">

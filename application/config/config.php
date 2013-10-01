@@ -16,9 +16,9 @@
 */
 
 
-$config['base_url']     = 'http://localhost/arabic_grammer/';
-$config['static_url']     = 'http://localhost/arabic_grammer/';
-$config['static_path']     = 'e:/arabic_grammer/uploads/';
+$config['base_url']     = 'http://localhost/klamona/';
+$config['static_url']     = 'http://localhost/klamona/';
+$config['static_path']     = 'e:/Dominos/klamona/uploads/';
 
 /*
 |--------------------------------------------------------------------------

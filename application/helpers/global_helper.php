@@ -45,4 +45,9 @@ function calc_score($user_assessment_id){
     return $result;
 }
 
+function numOfCorrectAnswer($user_assessment_id){
+    $result = UserAssessmentAnswersTable::getResultAssessmentUserAnswers($user_assessment_id); 
+    return $result['num_correct_answer'];
+}
+
 ?>

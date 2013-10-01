@@ -19,16 +19,20 @@ if (isset($type) && $type == '1') {
     <h1 style="margin-right: -10px;"><?php echo $assessment_type; ?>: </h1>
     <?php
     if (count($userAssessment)) {
+        $exams = array('');
         foreach ($userAssessment as $assessment) {
-            $class = 'assessment-name-box-inside';
-            $score = '';
-            if ($assessment['completed']) {
-                $class = 'completed_assessment-inside';
-                if (isset($type) && $type == '1') {
-                    $score = ' (' . calc_score($assessment['id']) . ')';
+            if (!in_array($assessment['Assessments']['name'], $exams)) {
+                $class = 'assessment-name-box-inside';
+                if ($assessment['completed']) {
+                    $class = 'completed_assessment-inside';
                 }
+                if (isset($type) && $type == '1') {
+                    echo '<a href="' . site_url('exam/results/' . $assessment['assessment_id']) . '" style="cursor: pointer;" class="' . $class . '">' . $assessment['Assessments']['name'] . '</a>';
+                } else {
+                    echo '<a href="' . site_url('assessment/results/' . $assessment['assessment_id']) . '" style="cursor: pointer;" class="' . $class . '">' . $assessment['Assessments']['name'] . '</a>';
+                }
+                $exams[] = $assessment['Assessments']['name'];
             }
-            echo '<div class="' . $class . '">' . $assessment['Assessments']['name'] . $score . '</div>';
         }
     }
     ?>
@@ -40,7 +44,9 @@ if (isset($type) && $type == '1') {
     </div>
 
     <div style="width: 480px;margin: 0 auto;">
-        <a href="<?php echo site_url($assessment_type_url); ?>" class="next"></a>
+        <?php if (!isset($previously)) { ?>
+            <a href="<?php echo site_url($assessment_type_url); ?>" class="next"></a>
+        <?php } ?>
     </div>
 
 <?php } else { ?>

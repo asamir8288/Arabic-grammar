@@ -48,8 +48,17 @@ class Exam extends CI_Controller {
         $this->data['userAssessment'] = UserAssessmentsTable::getAllUserAssessments($this->user_info['user_id'], 0, 1); // 1 means it is an exam not training        
         $this->data['allCompleted'] = UserAssessmentsTable::isAllAssessmentCompleted($this->user_info['user_id'], 1); // 1 means it is an exam not training
         $this->data['type'] = '1'; // Type 1 means it is an exam not training                
+        $this->data['previously'] = true; // that mean this will not display the next button                
 
         $this->template->write_view('content', 'frontend/assessments/preview_chosen_assessments', $this->data);
+        $this->template->render();
+    }
+    
+    public function results($assessment_id){
+        $this->data['assessments'] = UserAssessmentsTable::getExamResults($assessment_id); 
+//        pre_print($this->data['assessments'][0]);
+        
+        $this->template->write_view('content', 'frontend/assessments/exam_results', $this->data);
         $this->template->render();
     }
 
@@ -113,7 +122,7 @@ class Exam extends CI_Controller {
 
         if ($this->data['assessmentQuestions'] == false || $this->data['questionsNumber'] == 0) {
             $ua->setAssessmentAsChosin($assessment_id, 1);
-            redirect(site_url('exam/my_exams'));
+            redirect(site_url('exam/results/'. $assessment_id));
         }
 
         switch ($this->data['assessmentQuestions']['type_id']) {
