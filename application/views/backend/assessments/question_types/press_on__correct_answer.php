@@ -11,7 +11,7 @@
     </div>    
 </li>
 
-<?
+<?php
 $answers_tags = '';
 if (isset($answers)) {
     $answer = explode(',', $answers['QuestionAnswers'][0]['answer_text']);

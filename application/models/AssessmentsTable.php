@@ -26,4 +26,18 @@ class AssessmentsTable extends Doctrine_Table
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->execute();
     }
+    
+    public static function isAddedBefore($assessment_name){
+        $q = Doctrine_Query::create()
+                ->select('COUNT(a.id) AS exists')
+                ->from('Assessments a')
+                ->where('a.deleted=0')
+                ->andWhere('a.name =?', trim($assessment_name))
+                ->setHydrationMode(Doctrine_Core::HYDRATE_SCALAR)
+                ->fetchOne();
+        
+        if($q['a_exists'] > 0)
+            return true;
+        return false;
+    }
 }

@@ -6,6 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="<?php echo static_url(); ?>layout/css/style.css" type="text/css" media="screen" />	
         <link rel="stylesheet" href="<?php echo static_url(); ?>layout/css/form.css" type="text/css" media="screen" />	
+        <link rel="stylesheet" href="<?php echo static_url(); ?>layout/css/alerts.css" type="text/css" media="screen" />	
         <?php echo $_styles; ?>
 
         <script src="<?php echo static_url(); ?>layout/js/jquery-1.7.2.min.js"></script>
@@ -30,9 +31,9 @@
                             <div class="links">
                                 <a href="">الرئيسية</a>
                                 | 
-                                <a href="<?php echo site_url('admin/site/about_us');?>">عن الموقع</a>
+                                <a href="<?php echo site_url('admin/site/about_us'); ?>">عن الموقع</a>
                                 | 
-                                <a href="<?php echo site_url('admin/site/sayings');?>">أقوال مأثورة</a>
+                                <a href="<?php echo site_url('admin/site/sayings'); ?>">أقوال مأثورة</a>
                                 | 
                                 <a href="">اتصل بنا</a>
                             </div>
@@ -42,7 +43,7 @@
                                 </div>
                             </div>
                         </div>
-<?php } ?>
+                    <?php } ?>
                     <div id="inner-page-content">
 
                         <div class="inside-top-screen">                            
@@ -54,7 +55,18 @@
                             </div>
                         </div>
                         <div id="content">
-<?php echo $content; ?>
+                            <?php
+                            if ($this->session->flashdata('message')) {
+                                $message = $this->session->flashdata('message');
+                                ?>
+                                <div class="<?php echo $message['type'] ?>">
+                                    <?php echo $message['body']; ?>
+                                </div>
+                                <div class="clear" style="height: 20px;"></div>
+                                <?php
+                            }
+                            ?>   
+                            <?php echo $content; ?>
                         </div>
 
 

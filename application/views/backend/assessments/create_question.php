@@ -76,7 +76,7 @@
 <?php echo form_close(); ?>
 
 <div style="clear: both;height: 10px;"></div>
-<?
+<?php
 $feedback_tags = '';
 if (isset($question)) {
     $feedbacks = explode(',', $question['QuestionAnswers'][0]['feedback']);
