@@ -2,7 +2,7 @@ $(document).ready( function(){
     
     $(".normal-span-answer").live("click", function(){
         var highlighted = $(".selected-span-answer");
-        highlighted.removeClass("selected-span-answer");
+//        highlighted.removeClass("selected-span-answer");
         highlighted.addClass("normal-span-answer");
 
         $(this).removeClass("normal-span-answer");
