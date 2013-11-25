@@ -37,6 +37,22 @@ class Current_User extends CI_Model {
         }
     }
     
+    public static function api_login($email, $password){
+        $q = Doctrine_Query::create()
+                ->select('u.id, count(u.id) as user_exist')
+                ->from('Users u')
+                ->where('u.email=?', trim($email))
+                ->andWhere('u.password=?', md5(trim($password)))
+                ->setHydrationMode(Doctrine_Core::HYDRATE_SCALAR)
+                ->fetchOne();
+
+        if ($q['u_user_exist'] > 0) {
+            return $q['u_id'];
+        }else {
+            return false;
+        }
+    }
+    
     public function logout(){
         $CI = & get_instance();
         $CI->session->sess_destroy();

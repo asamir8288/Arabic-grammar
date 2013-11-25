@@ -17,6 +17,7 @@ define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0777);
+define('SECRET_KEY', '4D8CDDBDF05EEC94CD7AA651DD7D3E92');
 
 /*
 |--------------------------------------------------------------------------

@@ -21,7 +21,7 @@ class ACL {
                 redirect('dashboard');
             }
         }else{
-            if(!$_POST && $CI->uri->segment(1) != '' && $CI->uri->segment(1) != 'signup' && $CI->uri->segment(2) != 'get_grade_years' && $CI->uri->segment(1) != 'about-us' && $CI->uri->segment(1) != 'contact-us'){
+            if(!$_POST && $CI->uri->segment(1) != '' && $CI->uri->segment(1) != 'signup' && $CI->uri->segment(2) != 'get_grade_years' && $CI->uri->segment(1) != 'about-us' && $CI->uri->segment(1) != 'contact-us' && $CI->uri->segment(1) != 'klamona_api'){
                
                 if($CI->uri->segment(1) != 'admin'){
                     redirect('/');
