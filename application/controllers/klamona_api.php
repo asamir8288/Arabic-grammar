@@ -24,12 +24,12 @@ class klamona_api extends CI_Controller {
         if (isset($_GET)) {
             if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
                 $login = Current_User::api_login($_GET['email'], $_GET['password']);
-                if($login){
+                if ($login) {
                     $data['status'] = 'success';
-                }else {
+                } else {
                     $data['status'] = 'faild';
                 }
-                $data['user_id'] = $login;                
+                $data['user_id'] = $login;
                 echo json_encode($data);
             } else {
                 echo json_encode('Error in sending data');
@@ -49,19 +49,43 @@ class klamona_api extends CI_Controller {
                 $u->addUser($posted_data);
 
                 $login = Current_User::api_login($_GET['email'], $_GET['password']);
-                if($login){
+                if ($login) {
                     $data['status'] = 'success';
-                }else {
+                } else {
                     $data['status'] = 'faild';
                 }
                 $data['user_id'] = $login;
-                
+
                 echo json_encode($data);
             } else {
                 echo json_encode('Error in sending data');
             }
         } else {
             echo json_encode('There is no data was sent!');
+        }
+    }
+
+    public function get_user_exercises() {
+        $user_id = $_GET['user_id'];
+
+        if ($user_id && isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
+            $data['exercises'] = UserAssessmentsTable::getAllUserExcericesOrTests($user_id, true);
+            
+            echo json_encode($data);
+        } else {
+            echo json_encode('Error in sending data');
+        }
+    }
+    
+    public function get_user_tests() {
+        $user_id = $_GET['user_id'];
+
+        if ($user_id && isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
+            $data['exercises'] = UserAssessmentsTable::getAllUserExcericesOrTests($user_id, true, 1);
+            
+            echo json_encode($data);
+        } else {
+            echo json_encode('Error in sending data');
         }
     }
 

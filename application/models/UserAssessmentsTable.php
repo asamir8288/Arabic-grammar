@@ -93,5 +93,26 @@ class UserAssessmentsTable extends Doctrine_Table {
         
         return $q;
     }
+    
+    
+    public static function getAllUserExcericesOrTests($user_id, $completed = false, $type = 2) {
+        $q = Doctrine_Query::create()
+                ->select('a.id, a.name, ua.id, ua.completed')
+                ->from('Assessments a, a.UserAssessments ua')
+                ->where('ua.deleted=0')
+                ->andWhere('a.deleted=0');
+        if ($completed) {
+            $q = $q->andWhere('ua.completed=0');
+        }else {
+            $q = $q->andWhere('ua.completed=1');
+        }
+        $q = $q->andWhere('a.published=1')
+                ->andWhere('ua.userid=?', $user_id)
+                ->andWhere('ua.assessment_type=?', $type)
+                ->orderBy('ua.created_at ASC')
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->execute();
+        return $q;
+    }
 
 }
