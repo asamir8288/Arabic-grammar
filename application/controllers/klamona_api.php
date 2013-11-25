@@ -25,6 +25,11 @@ class klamona_api extends CI_Controller {
             if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
                 $login = Current_User::api_login($_GET['email'], $_GET['password']);
                 $data['user_id'] = $login;
+                if($login){
+                    $data['status'] = 'success';
+                }else {
+                    $data['status'] = 'faild';
+                }
                 echo json_encode($data);
             } else {
                 echo json_encode('Error in sending data');
@@ -44,7 +49,13 @@ class klamona_api extends CI_Controller {
                 $u->addUser($posted_data);
 
                 $login = Current_User::api_login($_GET['email'], $_GET['password']);
+                if($login){
+                    $data['status'] = 'success';
+                }else {
+                    $data['status'] = 'faild';
+                }
                 $data['user_id'] = $login;
+                
                 echo json_encode($data);
             } else {
                 echo json_encode('Error in sending data');
