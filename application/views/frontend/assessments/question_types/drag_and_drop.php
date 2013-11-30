@@ -25,4 +25,9 @@
 
 <div class="h-line"></div>
 
+<?php
+if (!is_null($q['QuestionAnswers'][0]['interest_grammatical']) && !empty($q['QuestionAnswers'][0]['interest_grammatical']))
+    echo $q['QuestionAnswers'][0]['interest_grammatical'];
+?>
+
 <a href="<?php echo site_url('question/' . $this->uri->segment(2). '/' . $q['id']);?>" class="next"></a>

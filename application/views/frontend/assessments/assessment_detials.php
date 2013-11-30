@@ -4,7 +4,7 @@
             var questions_number = $('#questions_number').val();
             var available_questions = $('#available_questions').html();
             
-            if(available_questions < questions_number){                
+            if(parseInt(available_questions) < parseInt(questions_number)){
                 $('.error').html('رجاء اختيار عدد ' + available_questions + ' أسئلة أو أقل');
                 return false;
             }else{

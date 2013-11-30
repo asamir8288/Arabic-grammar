@@ -28,7 +28,7 @@
                     <label><?php echo $answer[0]; ?></label>
                     <?php if ($answer[0] == $q['QuestionAnswers'][0]['correct_answer']) { ?>
                         <span class="ocq-question-answer ocq-correct-answer" >(أحسنت, اجابة صحيحة)</span>
-                    <?php
+                        <?php
                     } else {
                         if ($answer[1] != '') {
                             ?>
@@ -38,9 +38,14 @@
                     }
                     ?>
                 </li>
-<?php } ?>                       
+            <?php } ?>                       
         </ul>
     </li>
 </ol>
+
+<?php
+if (!is_null($q['QuestionAnswers'][0]['interest_grammatical']) && !empty($q['QuestionAnswers'][0]['interest_grammatical']))
+    echo $q['QuestionAnswers'][0]['interest_grammatical'];
+?>
 
 <a href="<?php echo site_url('question/' . $this->uri->segment(2) . '/' . $q['id']); ?>" class="next"></a>

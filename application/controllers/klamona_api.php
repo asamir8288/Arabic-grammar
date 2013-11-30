@@ -88,6 +88,18 @@ class klamona_api extends CI_Controller {
             echo json_encode('Error in sending data');
         }
     }
+    
+    public function delete_assessment(){
+        $assessment_id = $_GET['assessment_id'];
+        if ($assessment_id && isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
+            UserAssessmentsTable::deleteUserAssessment($assessment_id);
+            
+            $data['status'] = 'success';
+            echo json_encode($data);
+        }else {
+            echo json_encode('Error in sending data');
+        }
+    }
 
 }
 

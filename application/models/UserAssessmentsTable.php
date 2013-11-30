@@ -24,7 +24,7 @@ class UserAssessmentsTable extends Doctrine_Table {
                 ->andWhere('a.deleted=0');
         if ($completed) {
             $q = $q->andWhere('ua.completed=0');
-        }else {
+        } else {
             $q = $q->andWhere('ua.completed=1');
         }
         $q = $q->andWhere('a.published=1')
@@ -69,17 +69,16 @@ class UserAssessmentsTable extends Doctrine_Table {
             return true;
         return false;
     }
-    
-    public static function getAssessmentByName($keyword = ''){
+
+    public static function getAssessmentByName($keyword = '') {
         return Doctrine_Query::create()
-                ->select('a.name')
-                ->from('Assessments a')
-                ->where('a.name LIKE ?', '%' . $keyword .'%')
-                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
-                ->execute();
-                
+                        ->select('a.name')
+                        ->from('Assessments a')
+                        ->where('a.name LIKE ?', '%' . $keyword . '%')
+                        ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                        ->execute();
     }
-    
+
     public function getExamResults($assessment_id, $assessment_type = 1) { // Exams selected by type 1
         $q = Doctrine_Query::create()
                 ->select('ua.id, ua.created_at, a.*, uaa.*, q.*')
@@ -90,11 +89,10 @@ class UserAssessmentsTable extends Doctrine_Table {
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->orderBy('ua.created_at DESC')
                 ->execute();
-        
+
         return $q;
     }
-    
-    
+
     public static function getAllUserExcericesOrTests($user_id, $completed = false, $type = 2) {
         $q = Doctrine_Query::create()
                 ->select('a.id, a.name, ua.id, ua.completed')
@@ -103,7 +101,7 @@ class UserAssessmentsTable extends Doctrine_Table {
                 ->andWhere('a.deleted=0');
         if ($completed) {
             $q = $q->andWhere('ua.completed=0');
-        }else {
+        } else {
             $q = $q->andWhere('ua.completed=1');
         }
         $q = $q->andWhere('a.published=1')
@@ -113,6 +111,13 @@ class UserAssessmentsTable extends Doctrine_Table {
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->execute();
         return $q;
+    }
+
+    public static function deleteUserAssessment($assessment_id) {
+        Doctrine_Query::create()
+                ->delete('UserAssessments ua')
+                ->where('ua.id =?', $assessment_id)
+                ->execute();
     }
 
 }
