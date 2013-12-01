@@ -39,8 +39,8 @@ class QuestionsTable extends Doctrine_Table {
 
     public static function getAssessmentQuestions($assessment_id, $limit = null) {
         $q = Doctrine_Query::create()
-                        ->select('q.*, qt.name, qdl.name')
-                        ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl')
+                        ->select('q.*, qt.name, qdl.name, qa.*')
+                        ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl, q.QuestionAnswers qa')
                         ->where('q.assessment_id=?', $assessment_id)
                         ->andWhere('q.deleted=0');
         if($limit != null){
