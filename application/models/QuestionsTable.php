@@ -37,14 +37,19 @@ class QuestionsTable extends Doctrine_Table {
         return $q['q_count'];
     }
 
-    public static function getAssessmentQuestions($assessment_id) {
-        return Doctrine_Query::create()
+    public static function getAssessmentQuestions($assessment_id, $limit = null) {
+        $q = Doctrine_Query::create()
                         ->select('q.*, qt.name, qdl.name')
                         ->from('Questions q, q.QuestionTypes qt, q.DifficultyLevels qdl')
                         ->where('q.assessment_id=?', $assessment_id)
-                        ->andWhere('q.deleted=0')
-                        ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                        ->andWhere('q.deleted=0');
+        if($limit != null){
+            $q = $q->limit($limit);
+        }
+                        $q = $q->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                         ->execute();
+                        
+                        return $q;
     }
 
     public static function getAssessmentQuestion($assessment_id, $question_id = '', $assessment_type = 2) {

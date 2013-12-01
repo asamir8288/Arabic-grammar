@@ -70,33 +70,43 @@ class klamona_api extends CI_Controller {
 
         if ($user_id && isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
             $data['exercises'] = UserAssessmentsTable::getAllUserExcericesOrTests($user_id, true);
-            
+
             echo json_encode($data);
         } else {
             echo json_encode('Error in sending data');
         }
     }
-    
+
     public function get_user_tests() {
         $user_id = $_GET['user_id'];
 
         if ($user_id && isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
             $data['exercises'] = UserAssessmentsTable::getAllUserExcericesOrTests($user_id, true, 1);
-            
+
             echo json_encode($data);
         } else {
             echo json_encode('Error in sending data');
         }
     }
-    
-    public function delete_assessment(){
+
+    public function delete_assessment() {
         $assessment_id = $_GET['assessment_id'];
         if ($assessment_id && isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
             UserAssessmentsTable::deleteUserAssessment($assessment_id);
-            
+
             $data['status'] = 'success';
             echo json_encode($data);
-        }else {
+        } else {
+            echo json_encode('Error in sending data');
+        }
+    }
+
+    public function get_questions($assessment_id, $limit = null) {
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
+            $questions = QuestionsTable::getAssessmentQuestions($assessment_id, $limit);
+
+            echo json_encode($questions);
+        } else {
             echo json_encode('Error in sending data');
         }
     }
