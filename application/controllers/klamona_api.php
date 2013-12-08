@@ -111,6 +111,23 @@ class klamona_api extends CI_Controller {
         }
     }
 
+    public function question_answer() {
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
+            $userAnswer = array();
+            $userAnswer['user_assessment_id'] = $_GET['u_a_id'];
+            $userAnswer['questions_id'] = $_GET['questions_id'];
+            $userAnswer['user_answer'] = $_GET['user_answer'];
+            $userAnswer['correct_answer'] = $_GET['is_correct'];
+
+            $aa = new UserAssessmentAnswers();
+            $aa->addUserAnswer($userAnswer);
+
+            echo json_encode('added');
+        } else {
+            echo json_encode('Error in sending data');
+        }
+    }
+
 }
 
 ?>
