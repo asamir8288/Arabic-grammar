@@ -128,6 +128,53 @@ class klamona_api extends CI_Controller {
         }
     }
 
+    public function top_level_menu() {
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
+            $mainMenu = MenuTable::getMainMenuCategories();
+
+            echo json_encode($mainMenu);
+        } else {
+            echo json_encode('Error in sending data');
+        }
+    }
+
+    public function related_menu() {
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
+            $menu_id = $_GET['menu_id'];
+            $subMenu = MenuTable::getSubMenuItems($menu_id);
+
+            echo json_encode($subMenu);
+        } else {
+            echo json_encode('Error in sending data');
+        }
+    }
+
+    public function add_assessment_to_user() {
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {            
+            $valid_assessment = false;
+            $assessment_id = $_GET['assessment_id'];
+            $assessment_type = $_GET['assessment_type'];
+            $user_id = $_GET['user_id'];
+
+            if ($assessment_id) {
+                $assessment = array();
+                $assessment['user_id'] = $user_id;
+                $assessment['assessment_id'] = $assessment_id;
+                $assessment['assessment_type'] = $assessment_type;
+
+                $ua = new UserAssessments();
+                if (!$ua->isAssessmentAddedAndAvailable($assessment['user_id'], $assessment_id, $assessment_type)) {
+                    $ua->addAssessmentToUser($assessment);
+
+                    $valid_assessment = true;
+                } else {
+                    $valid_assessment = 'still_running';
+                }
+            }
+            echo json_encode($valid_assessment);
+        }
+    }
+
 }
 
 ?>
