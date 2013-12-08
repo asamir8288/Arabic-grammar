@@ -25,7 +25,7 @@
     </li>
 </ol>
 
-<div style="border-bottom: 1px solid rgb(218, 218, 218);width: 100%; height: 1px;margin-bottom: 10px;"></div>
+<div style="clear: both;border-bottom: 1px solid rgb(218, 218, 218);width: 100%; height: 1px;margin-bottom: 10px;"></div>
 
 <?php
 if (!is_null($q['QuestionAnswers'][0]['interest_grammatical']) && !empty($q['QuestionAnswers'][0]['interest_grammatical']))

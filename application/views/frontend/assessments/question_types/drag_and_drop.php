@@ -23,6 +23,7 @@
 
 </ul>
 
+<div style="clear: both; height: 10px;"></div>
 <div class="h-line"></div>
 
 <?php

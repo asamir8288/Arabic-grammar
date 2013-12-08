@@ -43,6 +43,7 @@
     </li>
 </ol>
 
+<div style="clear: both; height: 10px;"></div>
 <?php
 if (!is_null($q['QuestionAnswers'][0]['interest_grammatical']) && !empty($q['QuestionAnswers'][0]['interest_grammatical']))
     echo $q['QuestionAnswers'][0]['interest_grammatical'];
