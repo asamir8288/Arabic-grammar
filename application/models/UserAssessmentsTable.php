@@ -23,9 +23,9 @@ class UserAssessmentsTable extends Doctrine_Table {
                 ->where('ua.deleted=0')
                 ->andWhere('a.deleted=0');
         if ($completed) {
-            $q = $q->andWhere('ua.completed=1');
-        } else {
             $q = $q->andWhere('ua.completed=0');
+        } else {
+            $q = $q->andWhere('ua.completed=1');
         }
         $q = $q->andWhere('a.published=1')
                 ->andWhere('ua.userid=?', $user_id)
