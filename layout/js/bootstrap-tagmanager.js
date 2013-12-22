@@ -228,16 +228,17 @@
         alreadyInList = true;
       }
 
-      if (alreadyInList) {
-        var pTagId = tlid[p];
-        jQuery("#" + objName + "_" + pTagId).stop()
-           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_1 }, 100)
-           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_2 }, 100)
-           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_1 }, 100)
-           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_2 }, 100)
-           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_1 }, 100)
-           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_2 }, 100);
-      } else {
+//      if (alreadyInList) {
+//        var pTagId = tlid[p];
+//        jQuery("#" + objName + "_" + pTagId).stop()
+//           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_1 }, 100)
+//           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_2 }, 100)
+//           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_1 }, 100)
+//           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_2 }, 100)
+//           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_1 }, 100)
+//           .animate({ backgroundColor: tagManagerOptions.blinkBGColor_2 }, 100);
+//      } else 
+      {
         var max = Math.max.apply(null, tlid);
         max = max == -Infinity ? 0 : max;
 
