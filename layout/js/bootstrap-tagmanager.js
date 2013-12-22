@@ -220,7 +220,8 @@
       // dont accept new tags beyond the defined maximum
       if (tagManagerOptions.maxTags > 0 && tlis.length >= tagManagerOptions.maxTags) return;
 
-      var alreadyInList = false;
+      //var alreadyInList = false;
+      var alreadyInList = true; // mae the entry tag repeated
       var tlisLowerCase = tlis.map(function(elem) { return elem.toLowerCase(); }); 
       var p = jQuery.inArray(tag.toLowerCase(), tlisLowerCase);
       if (-1 != p) {
