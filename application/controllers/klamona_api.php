@@ -150,7 +150,7 @@ class klamona_api extends CI_Controller {
     }
 
     public function add_assessment_to_user() {
-        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {            
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
             $valid_assessment = false;
             $assessment_id = $_GET['assessment_id'];
             $assessment_type = $_GET['assessment_type'];
@@ -175,6 +175,36 @@ class klamona_api extends CI_Controller {
         }
     }
 
+    public function search() {
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
+            $keyword = $_GET['keyword'];
+            $data['response'] = 'false';
+
+            $results = UserAssessmentsTable::getAssessmentByName($keyword);
+            if (count($results) > 0) {
+                $data['response'] = 'true';
+                $data['assessments'] = array();
+
+                for ($i = 0; $i < count($results); $i++) {
+                    $data['assessments'][] = array('label' => $results[$i]['name'], 'value' => $results[$i]['name']);
+                }
+            }            
+
+            echo json_encode($data);
+        }
+    }
+
+    public function set_assessment_completed() {
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {                        
+            $u_assessment_id = $_GET['u_assessment_id'];
+            $ua = new UserAssessments();
+            $ua->setAssessmentCompleted($u_assessment_id);
+            
+            $data['response'] = 'true';
+            
+            echo json_encode($data);
+        }
+    }
 }
 
 ?>

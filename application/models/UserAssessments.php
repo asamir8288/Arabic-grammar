@@ -86,5 +86,13 @@ class UserAssessments extends BaseUserAssessments {
                 ->andWhere('ua.assessment_id =?', $assessment_id)
                 ->execute();
     }
+    
+    public function setAssessmentCompleted($u_assessment_id, $completed = true){
+        Doctrine_Query::create()
+                ->update('UserAssessments ua')
+                ->set('ua.completed=?', $completed)
+                ->where('ua.id =?', $u_assessment_id)
+                ->execute();
+    }
 
 }
