@@ -40,4 +40,19 @@ class AssessmentsTable extends Doctrine_Table
             return true;
         return false;
     }
+    
+    public static function isAssessmentExists($assessment_id) {
+        $sql = Doctrine_Query::create()
+                ->select('count(a.id) as count')
+                ->from('Assessments a')
+                ->where('a.id=?', $assessment_id)
+                ->setHydrationMode(Doctrine_Core::HYDRATE_SCALAR)
+                ->fetchOne();
+        
+        if($sql['a_count'] > 0) {
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
 }

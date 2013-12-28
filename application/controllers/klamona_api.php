@@ -157,18 +157,20 @@ class klamona_api extends CI_Controller {
             $user_id = $_GET['user_id'];
 
             if ($assessment_id) {
-                $assessment = array();
-                $assessment['user_id'] = $user_id;
-                $assessment['assessment_id'] = $assessment_id;
-                $assessment['assessment_type'] = $assessment_type;
+                if (AssessmentsTable::isAssessmentExists($assessment_id)) {
+                    $assessment = array();
+                    $assessment['user_id'] = $user_id;
+                    $assessment['assessment_id'] = $assessment_id;
+                    $assessment['assessment_type'] = $assessment_type;
 
-                $ua = new UserAssessments();
-                if (!$ua->isAssessmentAddedAndAvailable($assessment['user_id'], $assessment_id, $assessment_type)) {
-                    $ua->addAssessmentToUser($assessment);
+                    $ua = new UserAssessments();
+                    if (!$ua->isAssessmentAddedAndAvailable($assessment['user_id'], $assessment_id, $assessment_type)) {
+                        $ua->addAssessmentToUser($assessment);
 
-                    $valid_assessment = true;
-                } else {
-                    $valid_assessment = 'still_running';
+                        $valid_assessment = true;
+                    } else {
+                        $valid_assessment = 'still_running';
+                    }
                 }
             }
             echo json_encode($valid_assessment);
@@ -188,23 +190,24 @@ class klamona_api extends CI_Controller {
                 for ($i = 0; $i < count($results); $i++) {
                     $data['assessments'][] = array('label' => $results[$i]['name'], 'value' => $results[$i]['id']);
                 }
-            }            
+            }
 
             echo json_encode($data);
         }
     }
 
     public function set_assessment_completed() {
-        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {                        
+        if (isset($_GET['api_key']) && $_GET['api_key'] == SECRET_KEY) {
             $u_assessment_id = $_GET['u_assessment_id'];
             $ua = new UserAssessments();
             $ua->setAssessmentCompleted($u_assessment_id);
-            
+
             $data['response'] = 'true';
-            
+
             echo json_encode($data);
         }
     }
+
 }
 
 ?>
