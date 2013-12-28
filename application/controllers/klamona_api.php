@@ -186,7 +186,7 @@ class klamona_api extends CI_Controller {
                 $data['assessments'] = array();
 
                 for ($i = 0; $i < count($results); $i++) {
-                    $data['assessments'][] = array('label' => $results[$i]['name'], 'value' => $results[$i]['name']);
+                    $data['assessments'][] = array('label' => $results[$i]['name'], 'value' => $results[$i]['id']);
                 }
             }            
 

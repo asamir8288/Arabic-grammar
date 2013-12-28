@@ -72,7 +72,7 @@ class UserAssessmentsTable extends Doctrine_Table {
 
     public static function getAssessmentByName($keyword = '') {
         return Doctrine_Query::create()
-                        ->select('a.name')
+                        ->select('a.name, a.id')
                         ->from('Assessments a')
                         ->where('a.name LIKE ?', '%' . $keyword . '%')
                         ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
