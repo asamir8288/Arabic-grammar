@@ -62,5 +62,14 @@ class UserAssessmentAnswersTable extends Doctrine_Table {
         $results['num_correct_answer'] = $num_correct_answer;
         return $results;
     }
+    
+    public static function getExamsAnswers($user_assessment_id) {
+        return Doctrine_Query::create()
+                ->select('uaa.*, q.question')
+                ->from('UserAssessmentAnswers uaa, uaa.Questions q')
+                ->where('uaa.user_assessment_id =?', $user_assessment_id)
+                ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
+                ->execute();
+    }
 
 }

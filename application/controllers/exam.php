@@ -61,6 +61,14 @@ class Exam extends CI_Controller {
         $this->template->write_view('content', 'frontend/assessments/exam_results', $this->data);
         $this->template->render();
     }
+    
+    public function exam_result_details($u_assessment_id){
+        $this->data['exam'] = UserAssessmentAnswersTable::getExamsAnswers($u_assessment_id);
+//        pre_print($this->data['exam']);
+        
+        $this->template->write_view('content', 'frontend/assessments/exam_answers', $this->data);
+        $this->template->render();
+    }
 
     public function detials() {
         if ($this->input->post('submit')) {
