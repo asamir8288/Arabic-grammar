@@ -65,8 +65,8 @@ class UserAssessmentAnswersTable extends Doctrine_Table {
     
     public static function getExamsAnswers($user_assessment_id) {
         return Doctrine_Query::create()
-                ->select('uaa.*, q.question')
-                ->from('UserAssessmentAnswers uaa, uaa.Questions q')
+                ->select('uaa.*, q.question, q.type_id, qa.answer_text, qa.correct_answer')
+                ->from('UserAssessmentAnswers uaa, uaa.Questions q, q.QuestionAnswers qa')
                 ->where('uaa.user_assessment_id =?', $user_assessment_id)
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->execute();

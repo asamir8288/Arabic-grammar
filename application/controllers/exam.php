@@ -105,6 +105,7 @@ class Exam extends CI_Controller {
                 $user_answer = substr($userAnswer, 0, -1);
             }
             $user_assessment_id = $this->input->post('ua_id');
+            $this->session->set_userdata('u_assessment_id', $user_assessment_id);
 
             $qa = new QuestionAnswers();
             $answer = $qa->isCorrectAnswer($question_id, $user_answer);
@@ -120,7 +121,7 @@ class Exam extends CI_Controller {
             
             redirect(site_url('exam/question/' . $assessment_id));
         }
-
+        
         $this->data['submit_url'] = site_url('exam/question/' . $assessment_id);
 
         $ua = new UserAssessments();
@@ -130,7 +131,10 @@ class Exam extends CI_Controller {
 
         if ($this->data['assessmentQuestions'] == false || $this->data['questionsNumber'] == 0) {
             $ua->setAssessmentAsChosin($assessment_id, 1);
-            redirect(site_url('exam/results/'. $assessment_id));
+            $user_assessment_id = $this->session->userdata('u_assessment_id');
+            
+            redirect(site_url('exam/exam_result_details/'. $user_assessment_id));
+            $this->session->unset_userdata('u_assessment_id');
         }
 
         switch ($this->data['assessmentQuestions']['type_id']) {
