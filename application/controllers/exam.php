@@ -91,7 +91,7 @@ class Exam extends CI_Controller {
     }
 
     public function question($assessment_id) {
-        if ($this->input->post('submit')) {
+        if ($this->input->post('submit')) {            
             $question_id = $this->input->post('qId');
 
             // here we will get the user answers if the type is 4 or else

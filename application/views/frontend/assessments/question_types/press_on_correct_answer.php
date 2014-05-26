@@ -2,7 +2,7 @@
 <ol class="ocq-main-list-wrapper">
     <?php
     $answers = explode(',', $q['QuestionAnswers'][0]['answer_text']);
-    $feedbacks = explode(',', $q['QuestionAnswers'][0]['feedback']);        
+    $feedbacks = explode(',', $q['QuestionAnswers'][0]['feedback']);       
     ?>
     <li class="ocq-main-list">
         <p class="choose-each-question-main-paragraph">
