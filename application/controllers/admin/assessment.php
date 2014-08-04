@@ -171,7 +171,7 @@ class Assessment extends CI_Controller {
             $this->data['question'] = QuestionsTable::getQuestion($question_id);
         }
         
-        pre_print($this->data['question']);
+        var_dump($this->data['question']);
         $this->data['submit_url'] = site_url('admin/assessment/edit_question/' . $question_id);
         $this->data['questionTypes'] = QuestionTypesTable::getAllQuestionTypes();
         $this->data['questionDiffeculty'] = DifficultyLevelsTable::getAllDifficultyLevels();
