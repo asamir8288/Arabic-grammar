@@ -193,7 +193,6 @@ class Assessment extends CI_Controller {
         if ($question_id) {
             $this->data['answers'] = QuestionAnswersTable::getQuestionAnswers($question_id);
         }
-        var_dump($this->data['answers']);exit;
         $this->load->view('backend/assessments/question_types/multi_choices', $this->data);
     }
 
