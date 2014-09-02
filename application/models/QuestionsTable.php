@@ -117,8 +117,9 @@ class QuestionsTable extends Doctrine_Table {
     public static function getAllGrammerQuestions() {
         return Doctrine_Query::create()
                 ->select('q.*, qa.*')
-                ->from('Questions q, q.QuestionAnswers qa, q.Assessments a')
-                ->where('a.menu_id BETWEEN 2 AND 54')
+                ->from('Questions q, q.QuestionAnswers qa')
+                ->where('q.assessment_id = 41')
+                ->orWhere('q.assessment_id = 59')
                 ->setHydrationMode(Doctrine::HYDRATE_ARRAY)
                 ->execute();
     }

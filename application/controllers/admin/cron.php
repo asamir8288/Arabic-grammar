@@ -19,7 +19,7 @@ class Cron extends CI_Controller {
 
     public function updateGeneralGrammer() {
         $questions = QuestionsTable::getAllGrammerQuestions();
-//        pre_print(QuestionsTable::getAllGrammerQuestions());
+        pre_print(count(QuestionsTable::getAllGrammerQuestions()));
 
         $q = new Questions();
         foreach ($questions as $question) {
