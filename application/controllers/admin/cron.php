@@ -24,7 +24,7 @@ class Cron extends CI_Controller {
         $q = new Questions();
         foreach ($questions as $question) {
             $data = array();
-            $data['assessment_id'] = 41;
+            $data['assessment_id'] = 60;
             $data['question'] = $question['question'];
             $data['type_id'] = $question['type_id'];
             $data['difficulty_level'] = $question['difficulty_level'];
@@ -44,7 +44,7 @@ class Cron extends CI_Controller {
         $q = new Questions();
         foreach ($questions as $question) {
             $data = array();
-            $data['assessment_id'] = 59;
+            $data['assessment_id'] = 60;
             $data['question'] = $question['question'];
             $data['type_id'] = $question['type_id'];
             $data['difficulty_level'] = $question['difficulty_level'];

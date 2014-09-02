@@ -131,5 +131,6 @@ class QuestionsTable extends Doctrine_Table {
                 ->setHydrationMode(Doctrine::HYDRATE_ARRAY)
                 ->execute();
     }
+   
 
 }
