@@ -113,5 +113,23 @@ class QuestionsTable extends Doctrine_Table {
                 ->setHydrationMode(Doctrine_Core::HYDRATE_ARRAY)
                 ->fetchOne();
     }
+    
+    public static function getAllGrammerQuestions() {
+        return Doctrine_Query::create()
+                ->select('q.*, qa.*')
+                ->from('Questions q, q.QuestionAnswers qa, q.Assessments a')
+                ->where('a.menu_id BETWEEN 2 AND 54')
+                ->setHydrationMode(Doctrine::HYDRATE_ARRAY)
+                ->execute();
+    }
+    
+    public static function getAllSarfQuestions() {
+        return Doctrine_Query::create()
+                ->select('q.*, qa.*')
+                ->from('Questions q, q.QuestionAnswers qa, q.Assessments a')
+                ->where('a.menu_id BETWEEN 56 AND 76')
+                ->setHydrationMode(Doctrine::HYDRATE_ARRAY)
+                ->execute();
+    }
 
 }
