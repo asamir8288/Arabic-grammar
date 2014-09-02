@@ -40,6 +40,8 @@ class Cron extends CI_Controller {
 
     public function updateSarfGrammer() {
         $questions = QuestionsTable::getAllSarfQuestions();
+        
+        pre_print(count($questions));
 
         $q = new Questions();
         foreach ($questions as $question) {
