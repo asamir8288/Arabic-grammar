@@ -1,4 +1,4 @@
-<h2>عيّن مواضع الخطأ في العبارات التالية بالنقر عليها:</h2>
+<h2>عيّن المطلوب بالنقر على الكلمة (أو أكثر)  المناسبة:</h2>
 <ol class="ocq-main-list-wrapper">
     <?php
     $answers = explode(',', $q['QuestionAnswers'][0]['answer_text']);
